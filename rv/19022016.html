@@ -2,14 +2,14 @@
 <html>
   <head>
     <title>Lección 19022016</title>
-    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="Content-type" content="text/html; charset=UTF-8">
     <style>
       body {margin: 0;}
       canvas{width: 100%; height: 100%}
     </style
     </head
     <body>
-    <script src="three.min.js"><\script>
+    <script src="three.min.js"></script>
     <script>
       var escena = new THREE.Scene();
       var fov =75; //Campo de Visión
@@ -20,13 +20,14 @@
       camera.position.z=5;
       var renderer = new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth,window.innerHeight);
-      document.body.appendChild(renderer,domElement);
-      </script>
+      document.body.appendChild(renderer.domElement);
+    </script>
+      
     <script>
       var forma=new THREE.BoxGeometyry (1,1,1);
       var material=new THREE.MeshBasicMaterial({color: 0x00ff00});
       var cubo = new THREE.Mesh(forma,material);
-      escena.add(cubo
+      escena.add(cubo);
       funtion render(){
         requestAnimationFrame(render);
         renderer.render(escena,camara);
