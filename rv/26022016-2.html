@@ -23,13 +23,12 @@
       //La figura se establece sobre el plano zx
       var puntos = [];                                         //Arreglo vacio
       for ( var i=0; 1 < 50; i++ ) { 
-        puntos.push( new THREE.Vector3(                        //Se insertan puntos al arreglo
+        puntos.push( new THREE.Vector2(                        //Se insertan puntos al arreglo
                          Math.sin( i * 0.2 ) * 15 + 50,        //Eje x
-                         0,                                    //Eje y
-                         ( i - 5 ) * 2 ) );                    //Eje z
+                         ( i - 5 ) * 2 ) );                    //Eje y
       }
       
-      var forma = new THREE.LatheGeometry(puntos);             //La revolución se realiza sobre el eje z
+      var forma = new THREE.LatheGeometry(puntos);             //La revolución se realiza sobre el eje y
       
       var malla = new THREE.Mesh(forma);
       
