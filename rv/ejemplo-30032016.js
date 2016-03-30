@@ -34,11 +34,11 @@ function setup(){
   cubo2.rotation.y += step;
   
   renderer.render(escena,camara);
-  requestAnimationFrame(loop);
+  requestAnimationFrame(loop);}
   
   var cubo1, cubo2, escena, camara, renderer;
   var raycaster, step;
   
   setup();
   loop();
-  }
+  
