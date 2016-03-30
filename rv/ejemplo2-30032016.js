@@ -38,7 +38,7 @@ function setup(){
   raycaster2.set(pelota.position,new THREE.Vector3(-1,0,0));
   
   renderer.render(escena,camara);
-  requestAnimationFrame(loop);
+  requestAnimationFrame(loop);}
   
   var cubo1, cubo2, pelota,escena, camara, renderer;
   var raycaster1, raycaster2, step;
@@ -46,4 +46,4 @@ function setup(){
   
   setup();
   loop();
-  }
+  
