@@ -9,3 +9,6 @@
   </head>
   <body>
     <script src="http://mrdoob.github.com/three.js/build/three.min.js" >
+    <script src="./ejemplo-30032016.js"></script>
+  </body>
+</html>
