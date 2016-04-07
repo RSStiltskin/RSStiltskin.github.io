@@ -22,7 +22,7 @@ function setup(){
   renderer.setSize(window.innerHeight*.95, window.innerHeight*.95);
   
   document.body.appendChild(renderer.domElement);
-  step = 0.01;
+  step = 0.1;
   }
   
   function loop(){
@@ -30,7 +30,8 @@ function setup(){
   obstaculo1 = raycaster1.intersectObject(cubo1);
   obstaculo2 = raycaster2.intersectObject(cubo2);
   
-  if( (obstaculo1.lenght>0 && obstaculo1[0].distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2[0].distance<=0.5) )
+  //if( (obstaculo1.lenght>0 && obstaculo1[0].distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2[0].distance<=0.5) )
+  if( (obstaculo1.lenght>0 && obstaculo1.distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2.distance<=0.5) )
   step = -step;
   
   pelota.position.x += step;
