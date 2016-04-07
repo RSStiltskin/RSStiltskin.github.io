@@ -30,9 +30,9 @@ function setup(){
   obstaculo1 = raycaster1.intersectObject(cubo1);
   obstaculo2 = raycaster2.intersectObject(cubo2);
   
-  //if( (obstaculo1.lenght>0 && obstaculo1[0].distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2[0].distance<=0.5) )
-  if( (obstaculo1.lenght>0 && obstaculo1.distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2.distance<=0.5) )
-  step = -step;
+  if( (obstaculo1.lenght>0 && obstaculo1[0].distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2[0].distance<=0.5) ){
+  //if( (obstaculo1.lenght>0 && obstaculo1.distance<=0.5) || (obstaculo2.lenght>0 && obstaculo2.distance<=0.5) )
+  step = -step;}
   
   pelota.position.x += step;
   raycaster1.set(pelota.position,new THREE.Vector3(1,0,0));
