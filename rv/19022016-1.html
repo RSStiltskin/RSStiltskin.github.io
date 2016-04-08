@@ -23,7 +23,7 @@
     
     var camara = new THREE.PerspectiveCamera( fov, aspect, near, far );
     
-    camara.position.z = 5;
+    camara.position.z = 3;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -32,7 +32,7 @@
     </script>
     
     <script>
-    var geometry = new THREE.SphereGeometry( 1, 100, 100 );
+    var geometry = new THREE.SphereGeometry( 100, 100, 100 );
     var material = new THREE.MeshNormalMaterial( );
     var sphere = new THREE.Mesh( geometry, material );
     escena.add( sphere );
