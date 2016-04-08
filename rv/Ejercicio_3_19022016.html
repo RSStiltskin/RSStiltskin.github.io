@@ -21,7 +21,7 @@
     
     var camara = new THREE.PerspectiveCamera( fov, aspect, near, far );
     
-    camara.position.z = 7;
+    camara.position.z = 10;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -59,6 +59,7 @@
       requestAnimationFrame( render );
       //malla.rotation.x += 0.1;
       //malla.rotation.y +=0.1;
+      malla.rotation.z += 0.05;
       renderer.render( escena, camara );
     }
     render();
