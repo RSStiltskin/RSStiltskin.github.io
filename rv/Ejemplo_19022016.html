@@ -22,7 +22,7 @@
        renderer.setSize(window.innerWidth,window.innerHeight);
        document.body.appendChild(renderer.domElement);
        var forma=new THREE.BoxGeometry(1,1,1);
-       var material=new THREE.MeshBasicMaterial({color:0xffaaff;wireframe:true});
+       var material=new THREE.MeshBasicMaterial({color:0xffaaff,wireframe:true});
        var cubo=new THREE.Mesh(forma,material);
        escena.add(cubo);
        
