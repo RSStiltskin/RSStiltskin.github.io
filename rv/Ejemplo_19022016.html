@@ -22,7 +22,7 @@
        renderer.setSize(window.innerWidth,window.innerHeight);
        document.body.appendChild(renderer.domElement);
        var forma=new THREE.BoxGeometry(1,1,1);
-       var material=new THREE.MeshBasicMaterial({color:0xffaaff});
+       var material=new THREE.MeshBasicMaterial({color:0xffaaff;wireframe:true});
        var cubo=new THREE.Mesh(forma,material);
        escena.add(cubo);
        
@@ -31,7 +31,7 @@
        renderer.render(escena,camara);
        cubo.rotation.x += 0.01;
        cubo.rotation.y += 0.01;
-       cubo.rotation.z += 0.1;
+       cubo.rotation.z += 0.05;
        }
        render();
       </script>
