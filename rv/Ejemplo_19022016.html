@@ -22,19 +22,16 @@
        renderer.setSize(window.innerWidth,window.innerHeight);
        document.body.appendChild(renderer.domElement);
        var forma=new THREE.BoxGeometry(1,1,1);
-       var material=new THREE.MeshBasicMaterial({color:0xff0000});
+       var material=new THREE.MeshBasicMaterial({color:0xff00ff});
        var cubo=new THREE.Mesh(forma,material);
-       
-       edges = new THREE.EdgesHelper(object,{color:0x00ff00});
-       
        escena.add(cubo);
-       escena.add(edges);
        
        function render(){
        requestAnimationFrame(render);
        renderer.render(escena,camara);
        cubo.rotation.x += 0.01;
        cubo.rotation.y += 0.01;
+       cubo.rotation.z += 0.1;
        }
        render();
       </script>
