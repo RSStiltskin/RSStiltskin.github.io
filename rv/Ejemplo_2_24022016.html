@@ -22,13 +22,13 @@
     document.body.appendChild(renderer.domElement);
     
     var forma0 = new THREE.TetrahedronGeometry(1);
-    var forma1 = new THREE.BoxGeometry(2,2,2);
-    var forma2 = new THREE.SphereGeometry(2,15,15,0,3.14,0,6.28);
+    var forma1 = new THREE.BoxGeometry(2,2,2,5,5);
+    var forma2 = new THREE.SphereGeometry(2,15,15);
     var forma3=new THREE.CylinderGeometry(3,3,3,18,4,true);
    
     var material0 = new THREE.MeshBasicMaterial( );
     var material1 = new THREE.MeshBasicMaterial({wireframe:true,wireframeLinewidth:5});
-    var material2 = new THREE.MeshNormalMaterial( );
+    var material2 = new THREE.MeshNormalMaterial({wireframe:true,wireframeLinewidth:5});
     var material3 = new THREE.MeshBasicMaterial({wireframe:true,wireframeLineWidth:5});
     
     var piramide = new THREE.Mesh(forma0,material0);
@@ -44,8 +44,11 @@
     esfera.rotation.x += 0.01;
     esfera.rotation.y += 0.01;
     cilindro.rotation.x += 0.01;
+    cilindro.rotation.y += 0.01;
+    cilindro.rotation.z += 0.01;
     cubo.rotation.x += 0.01;
     piramide.rotation.y += 0.01;
+    piramide.rotation.x += 0.01;
     }
     render();
   </script>
