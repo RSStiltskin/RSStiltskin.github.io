@@ -21,19 +21,22 @@
     renderer.setSize(window.innerWidth,window.innerHeight);
     document.body.appendChild(renderer.domElement);
     
-    var forma=new THREE.SphereGeometry(2);
-    var forma2=new THREE.CylinderGeometry(1,1,2);
-    var forma3=new THREE.TorusGeometry(4,1,100,100);
+    var forma0 = new THREE.TetrahedronGeometry(1);
+    var forma1 = new THREE.BoxGeometry(2,2,2);
+    var forma2 = new THREE.SphereGeometry(2,15,15,0,Math.PI,0,Math.PI*2);
+    var forma3=new THREE.CylinderGeometry(3,3,3,18,4,true);
+   
+    var material0 = new THREE.MeshBasicMaterial( );
+    var material1 = new THREE.MeshBasicMaterial({wireframe:true,wireframeLinewidth:5});
+    var material2 = new THREE.MeshNormalMaterial( );
+    var material3 = new THREE.MeshBasicMaterial({wireframe:true,wireframeLineWidth:5});
     
-    var material=new THREE.MeshNormalMaterial({wireframe:true});
-    var material2=new THREE.MeshNormalMaterial({color:0xffffff});
-    var material3=new THREE.MeshNormalMaterial( );
+    var piramide = new THREE.Mesh(forma0,material0);
+    var cubo = new THREE.Mesh(forma1,material1);
+    var esfera = new THREE.Mesh(forma2,material2);
+    var cilindro = new THREE.Mesh(forma3,material3);
     
-    var esfera=new THREE.Mesh(forma,material);
-    var cilindro=new THREE.Mesh(forma2,material2);
-    var torus=new THREE.Mesh(forma3,material3);
-    
-    escena.add(esfera,cilindro,torus);
+    escena.add(piramide,cubo,esfera,cilindro);
     
     function render(){
     requestAnimationFrame(render);
@@ -41,7 +44,8 @@
     esfera.rotation.x += 0.01;
     esfera.rotation.y += 0.01;
     cilindro.rotation.x += 0.01;
-    torus.rotation.x += 0.01;
+    cubo.rotation.x += 0.01;
+    piramide.rotation.y += 0.01;
     }
     render();
   </script>
