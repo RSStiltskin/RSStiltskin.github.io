@@ -24,19 +24,22 @@
     var forma0 = new THREE.TetrahedronGeometry(1);
     var forma1 = new THREE.BoxGeometry(2,2,2,5,5);
     var forma2 = new THREE.SphereGeometry(2,15,15);
-    var forma3=new THREE.CylinderGeometry(3,3,3,30,3,true);
+    var forma3 = new THREE.CylinderGeometry(3,3,3,30,3,true);
+    var forma4 = new THREE.TorusGeometry(5,2,30,30,4);
    
     var material0 = new THREE.MeshBasicMaterial({color:0xDF7401});
-    var material1 = new THREE.MeshBasicMaterial({wireframe:true,wireframeLinewidth:5});
+    var material1 = new THREE.MeshBasicMaterial({color:xff0000,wireframe:true,wireframeLinewidth:5});
     var material2 = new THREE.MeshNormalMaterial({wireframe:true,wireframeLinewidth:5});
     var material3 = new THREE.MeshBasicMaterial({wireframe:true,wireframeLineWidth:5});
+    var material4 = new THREE.MeshNormalMaterial( );
     
     var piramide = new THREE.Mesh(forma0,material0);
     var cubo = new THREE.Mesh(forma1,material1);
     var esfera = new THREE.Mesh(forma2,material2);
     var cilindro = new THREE.Mesh(forma3,material3);
+    var torus = new THREE.Mesh(forma4,material4);
     
-    escena.add(piramide,cubo,esfera,cilindro);
+    escena.add(piramide,cubo,esfera,cilindro,torus);
     
     function render(){
     requestAnimationFrame(render);
@@ -49,6 +52,7 @@
     cubo.rotation.x += 0.01;
     piramide.rotation.y += 0.01;
     piramide.rotation.x += 0.01;
+    torus.rotation.x += 0.01;
     }
     render();
   </script>
