@@ -22,7 +22,7 @@
       renderer.setSize(window.innerWidth,window.innerHeight);
       document.body.appendChild(renderer.domElement);
       var forma=new THREE.SphereGeometry(1);
-      var material=new THREE.MeshNormalMaterial({color:0xff0000,wireframe:true});
+      var material=new THREE.MeshNormalMaterial({color:0xffbafa,wireframe:true});
       var esfera=new THREE.Mesh(forma,material);
       escena.add(esfera);
       function render(){
@@ -30,6 +30,7 @@
       renderer.render(escena,camara);
       esfera.rotation.x += 0.01;
       esfera.rotation.y += 0.01;
+      esfera.rotation.z += 0.5;
       }
       render();
     </script>
