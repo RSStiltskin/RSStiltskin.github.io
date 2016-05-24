@@ -25,7 +25,7 @@
     var forma1 = new THREE.BoxGeometry(2,2,2,5,5);
     var forma2 = new THREE.SphereGeometry(2,15,15);
     var forma3 = new THREE.CylinderGeometry(3,3,3,30,3,true);
-    var forma4 = new THREE.TorusGeometry(5,1,50,50);
+    var forma4 = new THREE.TorusGeometry(5,1.5,50,50);
    
     var material0 = new THREE.MeshBasicMaterial({color:0xDF7401});
     var material1 = new THREE.MeshBasicMaterial({color:0xff0000,wireframe:true,wireframeLinewidth:5});
@@ -51,7 +51,7 @@
     cilindro.rotation.z += 0.01;
     piramide.rotation.y += 0.01;
     piramide.rotation.x += 0.01;
-    torus.rotation.x += 0.5;
+    torus.rotation.x += 0.1;
     }
     render();
   </script>
