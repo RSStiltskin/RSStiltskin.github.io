@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Trazando Figuras</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+  </head>
+  <body>
+    <script src = "three.min.js">
+      
+      var escena = new THREE.Scene();
+      var fov = 75;
+      var aspect = window.innerWidth/window.innerHeight;
+      var near = 0.1;
+      var far = 1000;
+      var camara = new THREE.WebGLRenderer();
+      renderer.setSize(window.innerWidth,window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+     
+      var figura = new THREE.Shape();
+      figura.moveTo(0,0);
+      figura.lineTo(0,1);
+      figura.lineTo(1,1);
+      figura.lineTo(0,0);
+      
+      var forma = new THREE.ShapeGeometry(figura);
+      var malla = new THREE.Mesh(forma);
+      escena.add(malla);
+      
+      function loop(){
+        requestAnimationFrame(loop);
+        malla.rotation.y += 0.01;
+        renderer.render(escena,camara);
+      }
+      loop();
+    </script>
+  </body>
+</html>
+  
