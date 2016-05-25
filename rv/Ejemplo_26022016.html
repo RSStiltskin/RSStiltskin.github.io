@@ -29,8 +29,8 @@
     <script>
       var figura = new THREE.Shape();
       figura.moveTo(0,0);
-      figura.lineTo(0,1);
-      figura.lineTo(1,1);
+      figura.lineTo(0,10);
+      figura.lineTo(10,10);
       figura.lineTo(0,0);
       
       var forma = new THREE.ExtrudeGeometry(figura,{amount:15});
@@ -39,8 +39,8 @@
       
       function loop(){
         requestAnimationFrame(loop);
-        malla.rotation.y += 0.05;
-        malla.rotation.x += 0.05;
+        malla.rotation.y += 0.01;
+        malla.rotation.x += 0.01;
         renderer.render(escena,camara);
       }
       loop();
