@@ -53,7 +53,9 @@
     var geometry = new THREE.ShapeGeometry( figura );
     //var material = new THREE.MeshNormalMaterial( );
     var malla = new THREE.Mesh( geometry );
-    escena.add( malla );
+    var material = new THREE.MeshPhongMaterial({color:0xFACC2E, specular:0x141414, especular:0x000000, shininess:100 });
+    
+    escena.add( malla, material );
     
     function render(){
       requestAnimationFrame( render );
