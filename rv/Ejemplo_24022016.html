@@ -21,7 +21,7 @@
       var renderer=new THREE.WebGLRenderer();
       renderer.setSize(window.innerWidth,window.innerHeight);
       document.body.appendChild(renderer.domElement);
-      var forma=new THREE.SphereGeometry(7);
+      var forma=new THREE.SphereGeometry(7,30,30);
       var material=new THREE.MeshNormalMaterial({wireframe:true});
       var esfera=new THREE.Mesh(forma,material);
       escena.add(esfera);
