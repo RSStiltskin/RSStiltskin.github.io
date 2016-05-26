@@ -32,7 +32,7 @@
       }
       
       var forma = new THREE.LatheGeometry(puntos);             //La revolución se realiza sobre el eje y
-      var material = new THREE.MeshPhongMaterial();
+      var material = new THREE.MeshNormalMaterial();
       
       var sine = new THREE.Mesh(forma,material);
       
@@ -43,7 +43,6 @@
       
       sine.rotation.x += 0.01;
       sine.rotation.y += 0.01;
-      sine.rotation.z += 0.01;
       
       renderer.render( escena, camara);
       }
