@@ -31,7 +31,7 @@
                          ( i - 5 ) * 2 ) );                    //Eje y
       }
       
-      var forma = new THREE.LatheGeometry(puntos);             //La revolución se realiza sobre el eje y
+      var forma = new THREE.LatheGeometry(puntos,30);             //La revolución se realiza sobre el eje y
       var material = new THREE.MeshBasicMaterial({color:0x18781e, wireframe: true});
       
       var sine = new THREE.Mesh(forma,material);
