@@ -41,9 +41,9 @@
       function loop(){
       requestAnimationFrame( loop );
       
-      //sine.rotation.x += 0.01;
-      sine.rotation.y += 0.01;
-      //sine.rotation.z += 0.03;
+      sine.rotation.x += 0.001;
+      sine.rotation.y += 0.03;
+      sine.rotation.z += 0.01;
       
       renderer.render( escena, camara);
       }
