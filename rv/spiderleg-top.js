@@ -6,7 +6,7 @@ function setup(){
   camera = new THREE.PerspectiveCamera();
   camera.position.z=50;
   
-  var shape = new THREE.CylinderGeometry(10,10,20,15,10);
+  var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
   scene.add(topleg);
