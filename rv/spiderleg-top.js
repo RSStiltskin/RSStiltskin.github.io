@@ -7,7 +7,13 @@ function setup(){
   camera.position.z=50;
   
   var axisHelper = new THREE.AxisHelper( 20 );
-  scene.add( axisHelper );
+  //scene.add( axisHelper );
+  
+  var size = 1;
+  var step = 1;
+
+  var gridHelper = new THREE.GridHelper( size, step );
+  //scene.add( gridHelper );
   
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
@@ -22,7 +28,7 @@ function setup(){
   //var shape3 = new THREE.CylinderGeometry(3,2,15,10);
   //bottomleg = new THREE.Mesh(shape3, material);
   
-  scene.add(topleg, axisHelper);
+  scene.add(topleg, axisHelper, gridHelper);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
