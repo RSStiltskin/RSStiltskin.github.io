@@ -41,15 +41,15 @@
   
     var geometry = new THREE.LatheGeometry( puntos, 30 );
     //var material = new THREE.MeshNormalMaterial( );
-    var material = new THREE.MeshPhongMaterial();
+    var material = new THREE.MeshPhongMaterial({color:0x00FF00});
     var malla = new THREE.Mesh( geometry, material );
     escena.add( malla );
     
     function render(){
       requestAnimationFrame( render );
-      malla.rotation.x += 0.01;
-      malla.rotation.z += 0.05;
-      malla.rotation.y += 0.09;
+      //malla.rotation.x += 0.01;
+     // malla.rotation.z += 0.05;
+      malla.rotation.y += 0.01;
       renderer.render( escena, camara );
     }
     render();
