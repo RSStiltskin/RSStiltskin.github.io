@@ -39,8 +39,7 @@ function render(){
   requestAnimationFrame(render);
   //topleg.rotation.x += 0.01;
   topleg.rotation.y +=0.01;
-  middleleg.translateOnAxis(x,15);
-  middleleg.rotation.y += 0.001;
+  middleleg.rotation.y += 0.01;
   bottomleg.rotation.y += 0.01;
   renderer.render(scene, camera);
 }
