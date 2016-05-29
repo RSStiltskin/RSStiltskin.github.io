@@ -4,18 +4,14 @@ funtion setup(){
   
   var topleg = new.THREE.Mesh(shape, material)
   
-  scene = new THREE.Scene();
-  scene.add(topleg);
-  
-  var fov = 100;
-  var aspect = window.innerWidth/window.innerHeight;
-  var near = 0.1;
-  var far = 1000;
   camera= new THREE.PerspectiveCamera(fov,aspect,near,far);
   camera.position.z=5;
 
+  scene = new THREE.Scene();
+  scene.add(topleg);
+  
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth,window.innerHeight);
+  renderer.setSize(window.innerWidth*.95,window.innerHeight*.95);
   document.body.appendChild(renderer.domElement);
 }
   
