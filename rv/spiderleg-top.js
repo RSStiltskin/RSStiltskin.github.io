@@ -8,8 +8,8 @@ function setup(){
   
   var topleg = new THREE.Mesh(shape, material);
   
-  camera= new THREE.PerspectiveCamera(45, width/height, 1, 1000);
-  camera.position.z=50;
+  camera= new THREE.PerspectiveCamera(75, width/height, 1, 1000);
+  camera.position.z=100;
 
   scene = new THREE.Scene();
   scene.add(topleg);
