@@ -20,7 +20,7 @@ function setup(){
   var shape2 = new THREE.CylinderGeometry(4,3,20,15,10);
   middleleg = new THREE.Mesh(shape2, material);
   middleleg.rotation.z = Math.PI/6;
-  middleleg.position.set(15, -20, 0);
+  middleleg.translate(15, -20, 0);
   
   var shape3 = new THREE.CylinderGeometry(3,2,15,10);
   bottomleg = new THREE.Mesh(shape3, material);
