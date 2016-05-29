@@ -5,7 +5,7 @@ function setup(){
   var topleg = new THREE.Mesh(shape, material);
   
   camera= new THREE.PerspectiveCamera(45, width / height, 1, 1000);
-  camera.position.z=5;
+  camera.position.z=30;
 
   scene = new THREE.Scene();
   scene.add(topleg);
