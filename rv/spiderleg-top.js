@@ -1,11 +1,15 @@
+<style>
+    body { margin: 0; }
+    canvas { width: 100%; height: 100%; }
+</style>
 function setup(){
   var shape = new THREE.CylinderGeometry(10,10,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   
   var topleg = new THREE.Mesh(shape, material);
   
-  camera= new THREE.PerspectiveCamera(45, 1366/768, 1, 1000);
-  camera.position.z=30;
+  camera= new THREE.PerspectiveCamera(45, width/height, 1, 1000);
+  camera.position.z=50;
 
   scene = new THREE.Scene();
   scene.add(topleg);
