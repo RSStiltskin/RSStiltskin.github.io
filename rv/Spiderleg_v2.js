@@ -18,7 +18,7 @@ function setup(){
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
   topleg.position.set(m);
-  topleg.rotation.z = Math.PI/4;
+  //topleg.rotation.z = Math.PI/4;
   
   scene.add(topleg, axisHelper);
   
