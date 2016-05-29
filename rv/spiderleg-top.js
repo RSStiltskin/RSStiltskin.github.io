@@ -1,4 +1,4 @@
-var scene, camera, topleg, middleleg, renderer;
+var scene, camera, topleg, middleleg, bottomleg, renderer;
 
 function setup(){
   scene = new THREE.Scene();
@@ -12,9 +12,6 @@ function setup(){
   var size = 20;
   var step = 1;
 
-  var gridHelper = new THREE.GridHelper( size, step );
-  //scene.add( gridHelper );
-  
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
@@ -28,7 +25,7 @@ function setup(){
   //var shape3 = new THREE.CylinderGeometry(3,2,15,10);
   //bottomleg = new THREE.Mesh(shape3, material);
   
-  scene.add(topleg, axisHelper, gridHelper);
+  scene.add(topleg, axisHelper);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
