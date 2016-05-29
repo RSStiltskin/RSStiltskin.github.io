@@ -25,7 +25,7 @@ function setup(){
   m.multiplyMatrices( m1, m2 );
   m.multiply( m3 );
   
-  tD.applymatrix(m);
+  tD.applyMatrix(m);
   
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
