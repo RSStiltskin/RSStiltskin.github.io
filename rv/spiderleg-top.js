@@ -11,7 +11,7 @@ function setup(){
   scene.add(topleg);
   
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth*.95,window.innerHeight*.95);
+  renderer.setSize(window.innerWidth,window.innerHeight);
   document.body.appendChild(renderer.domElement);
 }
   
