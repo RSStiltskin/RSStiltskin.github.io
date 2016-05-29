@@ -1,7 +1,7 @@
 <!doctype html>
 <html>
   <head>
-    <title>Leccion 19/02/2016</title>
+    <title>Lathe Geometry</title>
     <meta http-equiv="Content-type"
           content="text/html; charset=UTF-8">
     <style>
@@ -36,13 +36,13 @@
     puntos.push(new THREE.Vector2(50,150));
     puntos.push(new THREE.Vector2(50,130));
     puntos.push(new THREE.Vector2(45,130));
-    //puntos.push(new THREE.Vector2(50,130));
     puntos.push(new THREE.Vector2(55,90));
     puntos.push(new THREE.Vector2(55,0));
   
-    var geometry = new THREE.LatheGeometry( puntos );
+    var geometry = new THREE.LatheGeometry( puntos, 30 );
     //var material = new THREE.MeshNormalMaterial( );
-    var malla = new THREE.Mesh( geometry );
+    var material = new THREE.MeshPhongMaterial();
+    var malla = new THREE.Mesh( geometry, material );
     escena.add( malla );
     
     function render(){
