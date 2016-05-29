@@ -38,7 +38,7 @@ setup();
 function render(){
   requestAnimationFrame(render);
   //topleg.rotation.x += 0.01;
-  //topleg.rotation.y +=0.01;
+  topleg.rotation.y +=0.01;
   renderer.render(scene, camera);
 }
 
