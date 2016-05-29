@@ -19,7 +19,7 @@ function loop(){
   requestAnimationFrame(loop);
   topleg.rotation.x += 0.01;
   topleg.rotation.y +=0.01;
-  renderer.render(scene, camera);
+  renderer.loop(scene, camera);
 }
 
 var camera, scene, renderer, topleg;
