@@ -12,7 +12,7 @@ function setup(){
   var size = 20;
   var step = 1; 
   
-  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI);
   
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
