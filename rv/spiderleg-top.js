@@ -5,7 +5,6 @@ function setup(){
   
   camera = new THREE.PerspectiveCamera();
   camera.position.z=50;
-  camera.position.y=50;
   
   var axisHelper = new THREE.AxisHelper( 20 );
   //scene.add( axisHelper );
