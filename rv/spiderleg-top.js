@@ -2,7 +2,7 @@ function setup(){
   var shape = new THREE.CylinderGeometry(10,10,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   
-  var topleg = new THREE.Mesh(shape, material)
+  var topleg = new THREE.Mesh(shape, material);
   
   camera= new THREE.PerspectiveCamera();
   camera.position.z=5;
