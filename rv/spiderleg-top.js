@@ -22,10 +22,12 @@ function setup(){
   middleleg.rotation.z = Math.PI/6;
   middleleg.position.set(15, -20, 0);
   
-  //var shape3 = new THREE.CylinderGeometry(3,2,15,10);
-  //bottomleg = new THREE.Mesh(shape3, material);
+  var shape3 = new THREE.CylinderGeometry(3,2,15,10);
+  bottomleg = new THREE.Mesh(shape3, material);
+  bottomleg.rotation.z = Math.PI/12;
+  bottomleg.position.set(10,-30,0);
   
-  scene.add(topleg, middleleg, axisHelper);
+  scene.add(topleg, middleleg, bottomleg, axisHelper);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
