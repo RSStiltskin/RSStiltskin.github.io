@@ -10,15 +10,16 @@ function setup(){
   //scene.add( axisHelper );
   
   var size = 20;
-  var step = 1;
-
-  var m = new THREE.Matrix4();
-  m.set ( 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1 )
+  var step = 1; 
+  
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
+  
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
   topleg.position.set(m);
   //topleg.rotation.z = Math.PI/4;
+  topleg.applyMatrix(rotation);
   
   scene.add(topleg, axisHelper);
   
