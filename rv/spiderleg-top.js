@@ -1,4 +1,4 @@
-var scene, camera, topleg, renderer;
+var scene, camera, topleg, middleleg, renderer;
 
 function setup(){
   scene = new THREE.Scene();
@@ -6,31 +6,23 @@ function setup(){
   camera = new THREE.PerspectiveCamera();
   camera.position.z=50;
   
-  //var tD = new THREE.Object3D();
-  //var m = new THREE.Matrix4();
-
-  //var m1 = new THREE.Matrix4();
-  //var m2 = new THREE.Matrix4();
-  //var m3 = new THREE.Matrix4();
-
-  //var alpha = 0;
-  //var beta = Math.PI;
-  //var gamma = Math.PI/2;
-
-  //m1.makeRotationX( alpha );
-  //m2.makeRotationY( beta );
-  //m3.makeRotationZ( gamma );
-
-  //m.multiplyMatrices( m1, m2 );
-  //m.multiply( m3 );
-  
-  //tD.applyMatrix(m);
+  var axisHelper = new THREE.AxisHelper( 20 );
+  scene.add( axisHelper );
   
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
   topleg.rotation.z = Math.PI/4;
-  scene.add(topleg);
+  
+  //var shape2 = new THREE.CylinderGeometry(4,3,20,15,10);
+  //middleleg = new THREE.Mesh(shape2, material);
+  //middleleg.rotation.z = Math.PI/3;
+  //middleleg.position
+  
+  //var shape3 = new THREE.CylinderGeometry(3,2,15,10);
+  //bottomleg = new THREE.Mesh(shape3, material);
+  
+  scene.add(topleg, axisHelper);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
