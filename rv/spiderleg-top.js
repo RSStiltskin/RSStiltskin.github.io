@@ -25,7 +25,7 @@ function setup(){
   var shape3 = new THREE.CylinderGeometry(3,2,15,10);
   bottomleg = new THREE.Mesh(shape3, material);
   bottomleg.rotation.z = Math.PI/12;
-  bottomleg.position.set(20,-40,0);
+  bottomleg.position.set(22,-40,0);
   
   scene.add(topleg, middleleg, bottomleg, axisHelper);
   
