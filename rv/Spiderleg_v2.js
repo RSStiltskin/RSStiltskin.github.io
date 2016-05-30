@@ -23,7 +23,7 @@ function setup(){
   topleg = new THREE.Mesh(shape, material);
   topleg.rotation.z = Math.PI/3;
   var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  topleg.applyMatrix(rotation);
+  //topleg.applyMatrix(rotation);
   topleg.position.set(10+20*Math.cos(Math.PI/6),-10-20*Math.sin(Math.PI/6),0);
   scene.add(topleg, axisHelper, spbody);
   
