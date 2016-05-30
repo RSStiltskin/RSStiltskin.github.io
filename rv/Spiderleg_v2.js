@@ -4,7 +4,7 @@ function setup(){
   scene = new THREE.Scene();
   fov = 75;
   aspect = window.innerWidth/window.innerHeight;
-  near = 1;
+  near = 10;
   far = 1000;
   camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.z=100;
