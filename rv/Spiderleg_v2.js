@@ -21,11 +21,14 @@ function setup(){
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   
+  var cx = 20*Math.cos(Math.PI/6);
+  var cy = 20*Math.sin(Math.PI/6);
+  
   topleg6 = new THREE.Mesh(shape, material);
   topleg6.rotation.z = Math.PI/3;
   //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
   //topleg.applyMatrix(rotation);
-  topleg6.position.set(10+20*Math.cos(Math.PI/6),-10-20*Math.sin(Math.PI/6),0);
+  topleg6.position.set(30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0);
   
   topleg5 = new THREE.Mesh(shape, material);
   topleg5.rotation.z = Math.PI/2;
@@ -37,7 +40,7 @@ function setup(){
   topleg4.rotation.z = 2*Math.PI/3;
   //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
   //topleg.applyMatrix(rotation);
-  topleg4.position.set(10+20*Math.cos(Math.PI/6),10+20*Math.sin(Math.PI/6),0);
+  topleg4.position.set(30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
   scene.add(topleg6, topleg5, topleg4, axisHelper, spbody);
   
