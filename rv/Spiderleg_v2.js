@@ -5,8 +5,6 @@ function setup(){
   
   camera = new THREE.PerspectiveCamera();
   camera.position.z=100;
-  camera.rotation.y=Math.PI/6;
-  camera.rotation.x=Math.PI/4;
   
   var axisHelper = new THREE.AxisHelper( 20 );
   //scene.add( axisHelper );
@@ -23,10 +21,10 @@ function setup(){
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
-  topleg.position.set(0,-10,0);
   //topleg.rotation.z = Math.PI/4;
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
   //topleg.applyMatrix(rotation);
-  
+  //topleg.position.set(0,-10,0);
   scene.add(topleg, axisHelper, spbody);
   
   renderer = new THREE.WebGLRenderer();
