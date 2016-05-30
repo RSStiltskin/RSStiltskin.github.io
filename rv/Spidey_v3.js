@@ -15,7 +15,7 @@ THREE.Object3D.call(this);
 //this.cilleg = new THREE.CylinderGeometry(8,4,16,15,10);
 //this.material = new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true});
 this.unionleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
-this.topleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
+this.topleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
 this.topleg.rotation.z=-2*Math.PI/3;
 this.topleg.position.set(-8*Math.PI/6,8*Math.PI/6,0);
 this.add(this.unionleg);
@@ -30,7 +30,7 @@ step = .01;
 scene = new THREE.Scene();
 scene.add(body);
 camera = new THREE.PerspectiveCamera();
-camera.position.z=100;
+camera.position.z=60;
 
 renderer = new THREE.WebGLRenderer();
 renderer.setSize( window.innerHeight, window.innerHeight);
