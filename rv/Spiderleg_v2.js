@@ -10,7 +10,7 @@ function setup(){
   camera = new THREE.PerspectiveCamera();
   camera.position.z=100;
 
-  var rotation = new THREE.Matrix4().makeRotationY(Math.PI/2);
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
   //rotation.set
   var shbody = new THREE.SphereGeometry(20,20,20,0,Math.PI);
   var mtbody = new THREE.MeshBasicMaterial({color: 0xB40404, wireframe: true});
@@ -63,7 +63,7 @@ function loop(){
   //camera.position.x = Math.cos( timer ) * 10;
   //camera.position.z = Math.sin( timer ) * 10;
   //camera.lookAt( scene.position );
-  //camera.rotation.y += 0.01;
+  camera.rotation.y += 0.01;
   requestAnimationFrame(loop);
   renderer.render(scene, camera);
 }
