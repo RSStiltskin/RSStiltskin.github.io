@@ -41,19 +41,19 @@ function setup(){
   
   topleg3 = new THREE.Mesh(shape, material);
   var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
-  topleg.applyMatrix(rotation);
+  topleg3.applyMatrix(rotation);
   topleg3.rotation.z = 2*Math.PI/3;
   topleg3.position.set(-30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0);
   
   topleg2 = new THREE.Mesh(shape, material);
   var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  topleg.applyMatrix(rotation);
+  topleg2.applyMatrix(rotation);
   topleg2.rotation.z = Math.PI/2;
   topleg2.position.set(-30,0,0);
   
   topleg1 = new THREE.Mesh(shape, material);
   var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  topleg.applyMatrix(rotation);
+  topleg1.applyMatrix(rotation);
   topleg1.rotation.z = Math.PI/3;
   topleg1.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
