@@ -11,11 +11,11 @@ var step, body;
 
 function TpLft(){
 THREE.Object3D.call(this);
-this.spleg = new THREE.SphereGeometry(8,20,20);
-this.cilleg = new THREE.CylinderGeometry(8,4,16,15,10);
-this.material = new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true});
-this.unionleg = new THREE.Mesh( this.spleg, this.material );
-this.topleg = new THREE.Mesh( this.cilleg, this.material );
+//this.spleg = new THREE.SphereGeometry(8,20,20);
+//this.cilleg = new THREE.CylinderGeometry(8,4,16,15,10);
+//this.material = new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true});
+this.unionleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
+this.topleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
 this.topleg.rotation.z=-2*Math.PI/3;
 this.topleg.position.set(-8*Math.PI/6,8*Math.PI/6,0);
 this.add(this.unionleg);
