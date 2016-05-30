@@ -78,4 +78,4 @@ function loop(){
   renderer.render(scene, camera);
 }
 
-render();
+loop());
