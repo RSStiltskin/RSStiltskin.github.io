@@ -21,7 +21,7 @@ function setup(){
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
-  topleg.rotation.z = Math.PI/4;
+  topleg.rotation.z = Math.PI/3;
   var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
   //topleg.applyMatrix(rotation);
   //topleg.position.set(0,-10,0);
