@@ -59,7 +59,7 @@ function setup(){
   THREE.GeometryUtils.merge( spider, topleg6 );
 	
   spyRobot = new THREE.Mesh( spider );
-  scena.add( spyRobot );
+  scene.add( spyRobot );
   scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, axisHelper, spbody);
   
   renderer = new THREE.WebGLRenderer();
