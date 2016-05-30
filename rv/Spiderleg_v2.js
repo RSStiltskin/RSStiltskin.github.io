@@ -10,7 +10,7 @@ function setup(){
   var axisHelper = new THREE.AxisHelper( 20 );
   //scene.add( axisHelper );
   
-  var size = 20;
+  var size = 40;
   var step = 1; 
   
   var rotation = new THREE.Matrix4().makeRotationY(Math.PI/2);
