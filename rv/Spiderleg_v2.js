@@ -2,8 +2,11 @@ var scene, camera, topleg6, topleg5, topleg4, topleg3, topleg2, topleg1;
 var middleleg, bottomleg, renderer, spbody;
 function setup(){
   scene = new THREE.Scene();
-  
-  camera = new THREE.PerspectiveCamera();
+  fov = 75;
+  aspect = window.innerWidth/window.innerHeight;
+  near = 1;
+  far = 1000;
+  camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
   camera.position.z=100;
   
   var axisHelper = new THREE.AxisHelper( 40 );
