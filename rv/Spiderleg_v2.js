@@ -40,21 +40,21 @@ function setup(){
   topleg4.position.set(30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
   topleg3 = new THREE.Mesh(shape, material);
-  topleg3.rotation.z = 8*Math.PI/3;
-  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  //topleg.applyMatrix(rotation);
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
+  topleg.applyMatrix(rotation);
+  topleg3.rotation.z = 2*Math.PI/3;
   topleg3.position.set(-30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0);
   
   topleg2 = new THREE.Mesh(shape, material);
-  topleg2.rotation.z = 5*Math.PI/2;
-  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  //topleg.applyMatrix(rotation);
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
+  topleg.applyMatrix(rotation);
+  topleg2.rotation.z = Math.PI/2;
   topleg2.position.set(-30,0,0);
   
   topleg1 = new THREE.Mesh(shape, material);
-  topleg1.rotation.z = 7*Math.PI/3;
-  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  //topleg.applyMatrix(rotation);
+  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
+  topleg.applyMatrix(rotation);
+  topleg1.rotation.z = Math.PI/3;
   topleg1.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
   scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, axisHelper, spbody);
