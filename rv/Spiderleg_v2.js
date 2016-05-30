@@ -2,11 +2,12 @@ var scene, camera, topleg6, topleg5, topleg4, topleg3, topleg2, topleg1;
 var middleleg, bottomleg, renderer, spbody, spyRobot;
 function setup(){
   scene = new THREE.Scene();
-  fov = 75;
-  aspect = window.innerWidth/window.innerHeight;
-  near = 10;
-  far = 1000;
-  camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  //fov = 75;
+  //aspect = window.innerWidth/window.innerHeight;
+  //near = 10;
+  //far = 1000;
+  //camera = new THREE.PerspectiveCamera(fov, aspect, near, far);
+  camera = new THREE.PerspectiveCamera();
   camera.position.z=100;
 
   var rotation = new THREE.Matrix4().makeRotationY(Math.PI/2);
@@ -51,7 +52,7 @@ function setup(){
   scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, spbody);
   
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize(window.innerWidth,window.innerHeight);
+  renderer.setSize(window.innerHeight,window.innerHeight);
   document.body.appendChild(renderer.domElement);
 }
 setup();
