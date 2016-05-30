@@ -38,13 +38,13 @@ function setup(){
   topleg1.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
 
   var spider = new THREE.Geometry();
-  THREE.Geometry.merge( spider, spbody );
-  THREE.Geometry.merge( spider, topleg1 );
+  THREE.GeometryUtils.merge( spider, spbody );
+  THREE.GeometryUtils.merge( spider, topleg1 );
   //THREE.Geometry.merge( spider, topleg2 );
-  THREE.Geometry.merge( spider, topleg3 );
-  THREE.Geometry.merge( spider, topleg4 );
+  THREE.GeometryUtils.merge( spider, topleg3 );
+  THREE.GeometryUtils.merge( spider, topleg4 );
   //THREE.Geometry.merge( spider, topleg5 );
-  THREE.Geometry.merge( spider, topleg6 );
+  THREE.GeometryUtils.merge( spider, topleg6 );
 	
   spyRobot = new THREE.Mesh( spider );
   //spyRobot.applyMatrix(rotation);
