@@ -1,5 +1,5 @@
 var scene, camera, topleg6, topleg5, topleg4, topleg3, topleg2, topleg1;
-var middleleg, bottomleg, renderer, spbody;
+var middleleg, bottomleg, renderer, spbody, spyRobot;
 function setup(){
   scene = new THREE.Scene();
   fov = 75;
@@ -49,7 +49,19 @@ function setup(){
   topleg1.rotation.z = Math.PI/3;
   topleg1.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
-  scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, axisHelper, spbody);
+  var spider = new THREE.Geometry();
+
+	THREE.GeometryUtils.merge( spider, spbody );
+	THREE.GeometryUtils.merge( spider, topleg1 );
+	THREE.GeometryUtils.merge( spider, topleg2 );
+	THREE.GeometryUtils.merge( spider, topleg3 );
+	THREE.GeometryUtils.merge( spider, topleg4 );
+	THREE.GeometryUtils.merge( spider, topleg5 );
+	THREE.GeometryUtils.merge( spider, topleg6 );
+	
+	spyRobot = new THREE.Mesh( robot );
+  scena.add( spyRobot );
+	scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, axisHelper, spbody);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
@@ -57,11 +69,13 @@ function setup(){
 }
 setup();
   
-function render(){
-  requestAnimationFrame(render);
-  //topleg.rotation.x += 0.01;
-  //topleg.rotation.y +=0.01;
- 
+function loop(){
+  requestAnimationFrame(loop);
+  var timer = Date.now() * 0.0002;
+  camera.position.x = Math.cos( timer ) * 10;
+  camera.position.z = Math.sin( timer ) * 10;
+  camera.lookAt( scene.position );
+  requestAnimationFrame(loop);
   renderer.render(scene, camera);
 }
 
