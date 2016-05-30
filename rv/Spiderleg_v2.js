@@ -62,8 +62,8 @@ function loop(){
   //var timer = Date.now() * 0.0002;
   //camera.position.x = Math.cos( timer ) * 10;
   //camera.position.z = Math.sin( timer ) * 10;
-  //camera.lookAt( scene.position );
-  camera.rotation.y += 0.01;
+  camera.lookAt( scene.position );
+  //camera.rotation.y += 0.01;
   requestAnimationFrame(loop);
   renderer.render(scene, camera);
 }
