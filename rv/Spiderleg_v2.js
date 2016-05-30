@@ -50,18 +50,17 @@ function setup(){
   topleg1.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
   var spider = new THREE.Geometry();
-
-	THREE.GeometryUtils.merge( spider, spbody );
-	THREE.GeometryUtils.merge( spider, topleg1 );
-	THREE.GeometryUtils.merge( spider, topleg2 );
-	THREE.GeometryUtils.merge( spider, topleg3 );
-	THREE.GeometryUtils.merge( spider, topleg4 );
-	THREE.GeometryUtils.merge( spider, topleg5 );
-	THREE.GeometryUtils.merge( spider, topleg6 );
+  THREE.GeometryUtils.merge( spider, spbody );
+  THREE.GeometryUtils.merge( spider, topleg1 );
+  THREE.GeometryUtils.merge( spider, topleg2 );
+  THREE.GeometryUtils.merge( spider, topleg3 );
+  THREE.GeometryUtils.merge( spider, topleg4 );
+  THREE.GeometryUtils.merge( spider, topleg5 );
+  THREE.GeometryUtils.merge( spider, topleg6 );
 	
-	spyRobot = new THREE.Mesh( robot );
+  spyRobot = new THREE.Mesh( spider );
   scena.add( spyRobot );
-	scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, axisHelper, spbody);
+  scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, axisHelper, spbody);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
