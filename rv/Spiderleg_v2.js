@@ -19,41 +19,30 @@ function setup(){
   spbody = new THREE.Mesh(shbody, mtbody);
   
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
+  var shape2 = new THREE.CylinderGeometry(4,5,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   
   topleg6 = new THREE.Mesh(shape, material);
   topleg6.rotation.z = Math.PI/3;
-  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  //topleg.applyMatrix(rotation);
   topleg6.position.set(30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0);
   
   topleg5 = new THREE.Mesh(shape, material);
   topleg5.rotation.z = Math.PI/2;
-  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  //topleg.applyMatrix(rotation);
   topleg5.position.set(30,0,0);
   
   topleg4 = new THREE.Mesh(shape, material);
   topleg4.rotation.z = 2*Math.PI/3;
-  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  //topleg.applyMatrix(rotation);
   topleg4.position.set(30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
-  topleg3 = new THREE.Mesh(shape, material);
-  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/2);
-  topleg3.applyMatrix(rotation);
+  topleg3 = new THREE.Mesh(shape2, material);
   topleg3.rotation.z = 2*Math.PI/3;
   topleg3.position.set(-30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0);
   
-  topleg2 = new THREE.Mesh(shape, material);
-  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  topleg2.applyMatrix(rotation);
+  topleg2 = new THREE.Mesh(shape2, material);
   topleg2.rotation.z = Math.PI/2;
   topleg2.position.set(-30,0,0);
   
-  topleg1 = new THREE.Mesh(shape, material);
-  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
-  topleg1.applyMatrix(rotation);
+  topleg1 = new THREE.Mesh(shape2, material);
   topleg1.rotation.z = Math.PI/3;
   topleg1.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   
