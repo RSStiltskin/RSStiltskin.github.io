@@ -1,5 +1,5 @@
-var scene, camera, topleg, middleleg, bottomleg, renderer, spbody;
-
+var scene, camera, topleg6, topleg5, topleg4, topleg3, topleg2, topleg1;
+var middleleg, bottomleg, renderer, spbody;
 function setup(){
   scene = new THREE.Scene();
   
@@ -20,12 +20,26 @@ function setup(){
   
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
-  topleg = new THREE.Mesh(shape, material);
-  topleg.rotation.z = Math.PI/3;
-  var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
+  
+  topleg6 = new THREE.Mesh(shape, material);
+  topleg6.rotation.z = Math.PI/3;
+  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
   //topleg.applyMatrix(rotation);
-  topleg.position.set(10+20*Math.cos(Math.PI/6),-10-20*Math.sin(Math.PI/6),0);
-  scene.add(topleg, axisHelper, spbody);
+  topleg6.position.set(10+20*Math.cos(Math.PI/6),-10-20*Math.sin(Math.PI/6),0);
+  
+  topleg5 = new THREE.Mesh(shape, material);
+  topleg5.rotation.z = Math.PI/2;
+  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
+  //topleg.applyMatrix(rotation);
+  topleg5.position.set(30,0,0);
+  
+  topleg4 = new THREE.Mesh(shape, material);
+  topleg4.rotation.z = 2*Math.PI/3;
+  //var rotation = new THREE.Matrix4().makeRotationX(Math.PI/4);
+  //topleg.applyMatrix(rotation);
+  topleg4.position.set(10+20*Math.cos(Math.PI/6),10+20*Math.sin(Math.PI/6),0);
+  
+  scene.add(topleg6, topleg5, topleg4, axisHelper, spbody);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
