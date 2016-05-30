@@ -47,9 +47,9 @@ function setup(){
   THREE.GeometryUtils.merge( spider, topleg6 );
 	
   spyRobot = new THREE.Mesh( spider );
-  spyRobot.applyMatrix(rotation);
+  //spyRobot.applyMatrix(rotation);
   scene.add( spyRobot );
-  scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, spbody);
+  //scene.add(topleg6, topleg5, topleg4, topleg3, topleg2, topleg1, spbody);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerHeight,window.innerHeight);
