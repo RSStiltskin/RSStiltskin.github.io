@@ -70,10 +70,10 @@ setup();
   
 function loop(){
   requestAnimationFrame(loop);
-  var timer = Date.now() * 0.0002;
-  camera.position.x = Math.cos( timer ) * 10;
-  camera.position.z = Math.sin( timer ) * 10;
-  camera.lookAt( scene.position );
+  //var timer = Date.now() * 0.0002;
+  //camera.position.x = Math.cos( timer ) * 10;
+  //camera.position.z = Math.sin( timer ) * 10;
+  //camera.lookAt( scene.position );
   requestAnimationFrame(loop);
   renderer.render(scene, camera);
 }
