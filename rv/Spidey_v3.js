@@ -2,7 +2,8 @@ var xleg1 = -20*Math.cos(Math.PI/6)-8*Math.cos(Math.PI/6);
 var yleg1 = 20*Math.sin(Math.PI/6)+8*Math.sin(Math.PI/6);
 
 var scene, camera, renderer;
-var step, body, topleg, unionleg;
+var step, body;
+//var topleg, unionleg;
 var spleg, cilleg, material1;
 
 //this.topleg.position.set( xleg1, yleg1 );
