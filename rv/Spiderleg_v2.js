@@ -22,8 +22,8 @@ function setup(){
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
   topleg.position.set(10,-10,0);
-  topleg.rotation.z = Math.PI/4;
-  topleg.applyMatrix(rotation);
+  //topleg.rotation.z = Math.PI/4;
+  //topleg.applyMatrix(rotation);
   
   scene.add(topleg, axisHelper, spbody);
   
