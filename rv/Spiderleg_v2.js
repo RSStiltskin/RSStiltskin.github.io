@@ -5,6 +5,7 @@ function setup(){
   
   camera = new THREE.PerspectiveCamera();
   camera.position.z=100;
+  camera.position.y=100;
   
   var axisHelper = new THREE.AxisHelper( 20 );
   //scene.add( axisHelper );
@@ -21,7 +22,7 @@ function setup(){
   var shape = new THREE.CylinderGeometry(5,4,20,15,10);
   var material = new THREE.MeshBasicMaterial({color: 0x31B404, wireframe: true});
   topleg = new THREE.Mesh(shape, material);
-  topleg.position.set(10,-10,0);
+  topleg.position.set(,-10,0);
   //topleg.rotation.z = Math.PI/4;
   //topleg.applyMatrix(rotation);
   
