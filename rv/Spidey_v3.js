@@ -42,6 +42,5 @@ requestAnimationFrame( loop );
 renderer.render (scene, camera);
 }
 
-TpLft();
 setup();
 loop();
