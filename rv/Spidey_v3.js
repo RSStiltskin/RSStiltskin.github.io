@@ -58,6 +58,6 @@ renderer.render (scene, camera);
 
 
 var scene, camera, renderer;
-var step, , body;
+var step, body;
 
 setup();
