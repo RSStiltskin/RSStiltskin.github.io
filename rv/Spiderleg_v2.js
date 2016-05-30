@@ -25,7 +25,7 @@ function setup(){
   topleg.rotation.z = Math.PI/4;
   topleg.applyMatrix(rotation);
   
-  scene.add(topleg, axisHelper);
+  scene.add(topleg, axisHelper, spbody);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize(window.innerWidth,window.innerHeight);
