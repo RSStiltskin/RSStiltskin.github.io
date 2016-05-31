@@ -90,6 +90,14 @@ function LegOne(){
 }
 LegOne.prototype = new THREE.Object3D;
 
+function LegTwo(){
+  THREE.Object3D.call(this);
+  this.twoupleg = new TopRLeg;
+  this.twodwleg = new RFoot;
+  this.add(this.twoupleg, this.twodwleg);
+}
+LegTwo.prototype = new THREE.Object3D;
+
 function FullSpider(){
   THREE.Object3D.call(this);
   this.mybody = new SpideyBody;
@@ -97,8 +105,10 @@ function FullSpider(){
   //this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.myoneleg = new LegOne;
   this.myoneleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  this.upperlegR = new TopRLeg;
-  this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  //this.upperlegR = new TopRLeg;
+  //this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.mytwoleg = new LegTwo;
+  this.mytwoleg.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.bottomlegL = new BottomLLeg;
   this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.bottomlegR = new BottomRLeg;
@@ -106,7 +116,7 @@ function FullSpider(){
   //this.leftfoot = new LFoot;
   //this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   //this.leftfoot.rotation.x=Math.PI/4;
-  this.add(this.mybody, this.upperlegR, this.bottomlegR, this.bottomlegL,this.myoneleg);
+  this.add(this.mybody, this.mytwoleg, this.bottomlegR, this.bottomlegL,this.myoneleg);
 }
 FullSpider.prototype = new THREE.Object3D;
 
@@ -139,9 +149,9 @@ function loop(){
   fullbody.myoneleg.rotation.z += step1;
   if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
     step1 = -step1;
-  //fullbody.upperlegR.rotation.z += step2;
-  //if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
-  //  step2 = -step2;
+  fullbody.mytwoleg.rotation.z += step2;
+  if(Math.abs(fullbody.mytwoleg.rotation.z)>Math.PI/4)
+    step2 = -step2;
   //fullbody.bottomlegL.rotation.z += step3;
   //if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
   //  step3 = -step3;
