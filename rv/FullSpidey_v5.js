@@ -11,8 +11,8 @@ function TopLLeg(){
   THREE.Object3D.call(this);
   THREE.TextureLoader.crossOrigin='';
   var texturelegs  =THREE.TextureLoader('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
-  this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF000,map: texturelegs}) );
-  this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: texturelegs}) );
+  this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({map: texturelegs}) );
+  this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({map: texturelegs}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg, this.toplleg);
@@ -21,9 +21,9 @@ TopLLeg.prototype = new THREE.Object3D;
 
 function LFoot(){
   THREE.Object3D.call(this);
-  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
-  this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
-  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
+  this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
   this.toplelbow.rotation.z=-Math.PI;
   this.toplelbow.rotation.x=Math.PI/2;
   this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
@@ -36,8 +36,8 @@ LFoot.prototype = new THREE.Object3D;
 
 function TopRLeg(){
   THREE.Object3D.call(this);
-  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
-  this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
+  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000}) );
   this.toprleg.rotation.z=2*Math.PI/3;
   this.toprleg.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.add(this.unionrleg, this.toprleg);
@@ -46,9 +46,9 @@ TopRLeg.prototype = new THREE.Object3D;
 
 function RFoot(){
   THREE.Object3D.call(this);
-  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
-  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
-  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
+  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
   this.toprelbow.rotation.z=-Math.PI;
   this.toprelbow.rotation.x=Math.PI/2;
   this.toprelbow.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
@@ -61,8 +61,8 @@ RFoot.prototype = new THREE.Object3D;
 
 function BottomRLeg(){
   THREE.Object3D.call(this);
-  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
-  this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
+  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000}) );
   this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.add(this.unionbrleg, this.topbrleg);
@@ -71,9 +71,9 @@ BottomRLeg.prototype = new THREE.Object3D;
 
 function BRFoot(){
   THREE.Object3D.call(this);
-  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
-  this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
-  this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
+  this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
   this.bottomrelbow.rotation.z=-Math.PI;
   this.bottomrelbow.rotation.x=Math.PI/2;
   this.bottomrelbow.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
@@ -86,8 +86,8 @@ BRFoot.prototype = new THREE.Object3D;
 
 function BottomLLeg(){
   THREE.Object3D.call(this);
-  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
-  this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
+  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg, this.topblleg);
@@ -96,9 +96,9 @@ BottomLLeg.prototype = new THREE.Object3D;
 
 function BLFoot(){
   THREE.Object3D.call(this);
-  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
-  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
-  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
+  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
   this.bottomlelbow.rotation.z=-Math.PI;
   this.bottomlelbow.rotation.x=Math.PI/2;
   this.bottomlelbow.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
@@ -111,7 +111,7 @@ BLFoot.prototype = new THREE.Object3D;
 
 function SpideyBody(){
   THREE.Object3D.call(this);
-  this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshLambertMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
+  this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
   this.add(this.fatbody);
 }
 SpideyBody.prototype = new THREE.Object3D;
