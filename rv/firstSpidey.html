@@ -62,7 +62,6 @@
     step4 = 0.017;
     scene = new THREE.Scene();
     scene.add(fatbody, unionblleg,topblleg,unionrleg,topbrleg,unionrleg,toprleg,unionlleg,toplleg);
-}
 
 function loop(){
   requestAnimationFrame( loop );
@@ -86,7 +85,6 @@ function loop(){
     renderer.render (scene, camera);
 }
 
-setup();
 loop();
 </script>
 </body>
