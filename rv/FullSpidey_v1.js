@@ -106,7 +106,7 @@ function loop(){
   if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
     step4 = -step4;
  
-  camera.lookAt(scene.pposition);
+  camera.lookAt(scene.position);
   renderer.render (scene, camera);
 }
 
