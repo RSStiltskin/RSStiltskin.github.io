@@ -46,7 +46,7 @@ function RFoot(){
   this.toprelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
   this.toprfoot.rotation.x=Math.PI/2;
   this.toprfoot.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),10);
-  this.unionlleg2.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
+  this.unionrleg2.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   this.add(this.unionrleg2, this.toprfoot, this.toprelbow);
 }
 RFoot.prototype = new THREE.Object3D;
