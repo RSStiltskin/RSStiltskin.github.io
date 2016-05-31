@@ -55,7 +55,7 @@ function BottomRLeg(){
   THREE.Object3D.call(this);
   this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
+  //this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.unionbrleg2.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
@@ -69,7 +69,7 @@ function BRFoot(){
   this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.bottomrelbow.rotation.z=-Math.PI;
-  this.bottomrelbow.rotation.x=Math.PI/2
+  this.bottomrelbow.rotation.x=Math.PI/2;
   this.bottomrelbow.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
   this.bottomrfoot.rotation.x=Math.PI/2;
   this.bottomrfoot.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),10);
@@ -82,13 +82,28 @@ function BottomLLeg(){
   THREE.Object3D.call(this);
   this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
+  //this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
-  this.unionbrleg2.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
-  this.add(this.unionblleg, this.topblleg, this.unionbrleg2);
+  this.unionblleg2.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
+  this.add(this.unionblleg, this.topblleg, this.unionblleg2);
 }
 BottomLLeg.prototype = new THREE.Object3D;
+
+function BLFoot(){
+  THREE.Object3D.call(this);
+  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
+  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.bottomlelbow.rotation.z=-Math.PI;
+  this.bottomlelbow.rotation.x=Math.PI/2
+  this.bottomlelbow.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
+  this.bottomlfoot.rotation.x=Math.PI/2;
+  this.bottomlfoot.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),10);
+  this.unionblleg2.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
+  this.add(this.unionblleg2, this.bottomlfoot, this.bottomlelbow);
+}
+BRFoot.prototype = new THREE.Object3D;
 
 function SpideyBody(){
   THREE.Object3D.call(this);
@@ -121,6 +136,15 @@ function LegThree(){
 }
 LegThree.prototype = new THREE.Object3D;
 
+function LegFour(){
+  THREE.Object3D.call(this);
+  this.fourbtleg = new BottomLLeg;
+  this.fourbtfoot = new BLFoot;
+  this.add(this.fourbtleg, this.fourbtfoot);
+}
+LegThree.prototype = new THREE.Object3D;
+
+
 function FullSpider(){
   THREE.Object3D.call(this);
   this.mybody = new SpideyBody;
@@ -132,8 +156,10 @@ function FullSpider(){
   //this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.mytwoleg = new LegTwo;
   this.mytwoleg.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  this.bottomlegL = new BottomLLeg;
-  this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
+  //this.bottomlegL = new BottomLLeg;
+  //this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
+  this.myfourleg = new LegFour;
+  this.myfourleg.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0)
   //this.bottomlegR = new BottomRLeg;
   //this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.mythreeleg = new LegThree;
@@ -177,9 +203,9 @@ function loop(){
   fullbody.mytwoleg.rotation.z += step2;
   if(Math.abs(fullbody.mytwoleg.rotation.z)>Math.PI/4)
     step2 = -step2;
-  //fullbody.bottomlegL.rotation.z += step3;
-  //if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
-  //  step3 = -step3;
+  fullbody.myfourleg.rotation.z += step3;
+  if(Math.abs(fullbody.myfourleg.rotation.z)>Math.PI/4)
+    step3 = -step3;
   fullbody.mythreeleg.rotation.z += step4;
   if(Math.abs(fullbody.mythreeleg.rotation.z)>Math.PI/4)
     step4 = -step4;
