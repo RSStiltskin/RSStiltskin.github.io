@@ -7,7 +7,6 @@ function TopLLeg(){
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
-  //this.unionlleg.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg, this.toplleg);
 }
 TopLLeg.prototype = new THREE.Object3D;
@@ -17,32 +16,40 @@ function LFoot(){
   this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
-  
   this.toplelbow.rotation.z=-Math.PI;
   this.toplelbow.rotation.x=Math.PI/2
   this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
-  
   this.toplfoot.rotation.x=Math.PI/2;
   this.toplfoot.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),10);
-  
   this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
-  //this.toplelbow.position.set(-16*Math.cos(Math.PI/6),-6+16*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg2, this.toplfoot, this.toplelbow);
 }
-
 LFoot.prototype = new THREE.Object3D;
 
 function TopRLeg(){
   THREE.Object3D.call(this);
   this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.toprleg.rotation.z=2*Math.PI/3;
   this.toprleg.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
-  this.unionrleg2.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
-  this.add(this.unionrleg, this.toprleg, this.unionrleg2);
+  this.add(this.unionrleg, this.toprleg);
 }
 TopRLeg.prototype = new THREE.Object3D;
+
+function RFoot(){
+  THREE.Object3D.call(this);
+  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
+  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.toprelbow.rotation.z=-Math.PI;
+  this.toprelbow.rotation.x=Math.PI/2
+  this.toprelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
+  this.toprfoot.rotation.x=Math.PI/2;
+  this.toprfoot.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),10);
+  this.unionlleg2.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
+  this.add(this.unionrleg2, this.toprfoot, this.toprelbow);
+}
+RFoot.prototype = new THREE.Object3D;
 
 function BottomRLeg(){
   THREE.Object3D.call(this);
