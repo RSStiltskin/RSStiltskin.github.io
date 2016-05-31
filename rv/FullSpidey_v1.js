@@ -12,7 +12,7 @@ function TopLLeg(){
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
-  this.add(this.unionlleg, this.toplleg, this.unionlleg2);
+  this.add(this.unionlleg, this.toplleg, this.unionlleg2, this.toplfoot);
 }
 TopLLeg.prototype = new THREE.Object3D;
 
