@@ -83,6 +83,7 @@ function setup(){
   camera.position.z = 80;
   camera.rotation.x = Math.PI/4;
   camera.rotation.z = Math.PI/3;
+  camera.rotation.y = Math.PI/3;
   //camera.lookAt(scene.position);
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight);
