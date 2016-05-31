@@ -73,14 +73,14 @@ FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
   var axisHelper = new THREE.AxisHelper( 50 );
-  scene.add( axisHelper );
+  //scene.add( axisHelper );
   fullbody = new FullSpider;
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
   step4 = 0.017;
   scene = new THREE.Scene();
-  scene.add(fullbody);
+  scene.add(fullbody, axisHelper);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(10,-50,80);
   camera.rotation.x = Math.PI/6;
