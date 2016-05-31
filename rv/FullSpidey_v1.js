@@ -81,6 +81,7 @@ function LegOne(){
   this.onedwleg = new LFoot;
   this.add(this.oneupleg, this.onedwleg);
 }
+LegOne.prototype = new THREE.Object3D;
 
 function FullSpider(){
   THREE.Object3D.call(this);
