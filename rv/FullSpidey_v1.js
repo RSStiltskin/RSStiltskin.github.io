@@ -72,6 +72,8 @@ function FullSpider(){
 FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
+  var axisHelper = new THREE.AxisHelper( 50 );
+  scene.add( axisHelper );
   fullbody = new FullSpider;
   step1 = 0.01;
   step2 = 0.02;
