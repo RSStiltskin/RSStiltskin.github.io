@@ -104,7 +104,7 @@ function loop(){
   
   fullbody.upperlegR.rotation.z += step2;
   if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
-    step2 = -step;
+    step2 = -step2;
   
   fullbody.bottomlegL.rotation.z += step3;
   if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
