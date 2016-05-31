@@ -11,7 +11,8 @@ function TopLLeg(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
   this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
-  this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({map: this.texturelegs}) );
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
+  this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({map: this.texturefeet}) );
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({map: this.texturelegs}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
@@ -21,9 +22,12 @@ TopLLeg.prototype = new THREE.Object3D;
 
 function LFoot(){
   THREE.Object3D.call(this);
-  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
-  this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
-  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
+  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
+  this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
+  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
   this.toplelbow.rotation.z=-Math.PI;
   this.toplelbow.rotation.x=Math.PI/2;
   this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
@@ -37,8 +41,9 @@ LFoot.prototype = new THREE.Object3D;
 function TopRLeg(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
   this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
-  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
   this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.toprleg.rotation.z=2*Math.PI/3;
   this.toprleg.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
@@ -48,9 +53,12 @@ TopRLeg.prototype = new THREE.Object3D;
 
 function RFoot(){
   THREE.Object3D.call(this);
-  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
-  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
-  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
+  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
+  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
   this.toprelbow.rotation.z=-Math.PI;
   this.toprelbow.rotation.x=Math.PI/2;
   this.toprelbow.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
@@ -64,8 +72,9 @@ RFoot.prototype = new THREE.Object3D;
 function BottomRLeg(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
   this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
-  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
   this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
@@ -75,9 +84,12 @@ BottomRLeg.prototype = new THREE.Object3D;
 
 function BRFoot(){
   THREE.Object3D.call(this);
-  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
-  this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
-  this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
+  this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
+  this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
   this.bottomrelbow.rotation.z=-Math.PI;
   this.bottomrelbow.rotation.x=Math.PI/2;
   this.bottomrelbow.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
@@ -91,8 +103,9 @@ BRFoot.prototype = new THREE.Object3D;
 function BottomLLeg(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
   this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
-  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
   this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
@@ -102,9 +115,12 @@ BottomLLeg.prototype = new THREE.Object3D;
 
 function BLFoot(){
   THREE.Object3D.call(this);
-  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}) );
-  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
-  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({color:0xFFFF00}));
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturefeet = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderfeet.jpg');
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturefeet}) );
+  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
+  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshLambertMaterial({map: this.texturelegs}));
   this.bottomlelbow.rotation.z=-Math.PI;
   this.bottomlelbow.rotation.x=Math.PI/2;
   this.bottomlelbow.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
