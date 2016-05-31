@@ -9,8 +9,8 @@ var LUlegrot = 2*Math.PI/3;
 
 function TopLLeg(){
   THREE.Object3D.call(this);
-  THREE.ImageUtils.crossOrigin='';
-  var texturelegs  =THREE.ImageUtils.TextureLoader('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  THREE.TextureLoader.crossOrigin='';
+  var texturelegs  =THREE.TextureLoader('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
   this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: texturelegs}) );
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: texturelegs}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
