@@ -85,7 +85,7 @@ function BottomLLeg(){
   //this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
-  this.unionblleg.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
+  //this.unionblleg.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg, this.topblleg);
 }
 BottomLLeg.prototype = new THREE.Object3D;
