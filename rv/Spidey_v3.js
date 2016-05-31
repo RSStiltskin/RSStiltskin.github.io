@@ -11,14 +11,15 @@ var step, mybody, upperleg1, upperleg2;
 
 //function TpLft(){
 function TopLeg(){
-THREE.Object3D.call(this);
-this.unionleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
-this.topleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-//this.topleg.rotation.z=-2*Math.PI/3;
-//this.topleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
-this.add(this.unionleg);
-this.add(this.topleg);
+  THREE.Object3D.call(this);
+  this.unionleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
+  this.topleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
+  //this.topleg.rotation.z=-2*Math.PI/3;
+  //this.topleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
+  this.add(this.unionleg);
+  this.add(this.topleg);
 }
+TopLeg.prototype = new THREE.Object3D;
 
 function SpideyBody(){
   THREE.Object3D.call(this);
@@ -26,7 +27,7 @@ function SpideyBody(){
   this.add(this.fatbody);
 }
 
-TpLft.prototype = new THREE.Object3D;
+SpideyBody.prototype = new THREE.Object3D;
 
 function setup(){
   mybody = new SpideyBody;
