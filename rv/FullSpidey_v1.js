@@ -96,7 +96,7 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
-  //fullbody.rotation.z -= 0.005;
+  fullbody.rotation.z -= 0.005;
   //camera.lookAt(scene.position);
   fullbody.upperlegL.rotation.z += step1;
   if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
