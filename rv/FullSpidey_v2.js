@@ -157,15 +157,29 @@ function FullSpider(){
 FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
+  var lights = [];
   var axisHelper = new THREE.AxisHelper( 50 );
   fullbody = new FullSpider;
   fullbody.rotation.x = Math.PI/2;
+  lights[0] = new THREE.PointLight(0xffffff, 1, 0);
+  lights[1] = new THREE.PointLight(0xffffff, 1, 0);
+  lights[2] = new THREE.PointLight(0xffffff, 1, 0);
+  
+  lights[0].position.set(0, 200, 0);
+  lights[1].position.set(100, 200, 100);
+  lights[2].position.set(-100, -200, -100);
+  
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
   step4 = 0.017;
+  
   scene = new THREE.Scene();
   scene.add(fullbody, axisHelper);
+  scene.add(lights[0]);
+  scene.add(lights[1]);
+  scene.add(lights[2])
+  
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(15,25,60);
   renderer = new THREE.WebGLRenderer();
