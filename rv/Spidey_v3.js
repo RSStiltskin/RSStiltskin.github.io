@@ -1,15 +1,7 @@
-//var xleg = 20*Math.cos(Math.PI/6);
-//var yleg = 20*Math.sin(Math.PI/6);
-//var step, mybody, upperlegL, upperlegR;
-//var bottomlegR, bottomlegL;
-//var topleg, unionleg;
-//var spleg, cilleg, material1;
-//this.topleg.position.set( xleg1, yleg1 );
-//this.unionleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-//function TpLft(){
 var scene, camera, renderer;
 var step1, step2, step3, step4, fullbody;
 var LUlegrot = 2*Math.PI/3;
+
 function TopLLeg(){
   THREE.Object3D.call(this);
   this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
