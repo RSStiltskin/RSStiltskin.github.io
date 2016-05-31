@@ -60,7 +60,7 @@ function SpideyBody(){
 }
 SpideyBody.prototype = new THREE.Object3D;
 
-funtion FullSpider(){
+function FullSpider(){
   this.mybody = new SpideyBody;
   this.upperlegL = new TopLLeg;
   this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
