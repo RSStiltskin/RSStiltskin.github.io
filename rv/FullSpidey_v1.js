@@ -94,7 +94,7 @@ function setup(){
   var axisHelper = new THREE.AxisHelper( 50 );
   //scene.add( axisHelper );
   fullbody = new FullSpider;
-  fullbody.rotation.x = Math.PI/2;
+  //fullbody.rotation.x = Math.PI/2;
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
