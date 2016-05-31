@@ -118,11 +118,11 @@ BLFoot.prototype = new THREE.Object3D;
 function SpideyBody(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
-  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/squaremask.jpg');
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/Spidey.jpg');
   this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(40,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
-  this.fatbody.rotation.x=-4*Math.PI/9;
+  this.fatbody.rotation.x=-Math.PI/2;
   this.fatbody.rotation.y=Math.PI/2;
-  this.fatbody.rotation.z=Math.PI/2;
+  this.fatbody.rotation.z=Math.PI/4;
   this.add(this.fatbody);
 }
 SpideyBody.prototype = new THREE.Object3D;
