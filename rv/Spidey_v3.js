@@ -85,7 +85,7 @@ function setup(){
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
-  step4 = 0.0.17;
+  step4 = 0.017;
   scene = new THREE.Scene();
   scene.add(fullbody);
   camera = new THREE.PerspectiveCamera();
