@@ -16,6 +16,9 @@ function LFoot(){
   THREE.Object3D.call(this);
   this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,5,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.toplelbow.rotation.z=Math.PI;
+  this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   //this.toplfoot.rotation.x=2*Math.PI/3;
   //this.toplfoot.rotation.y=Math.PI/3;
   this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0)
@@ -81,7 +84,7 @@ function FullSpider(){
   this.bottomlegR = new BottomRLeg;
   this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.leftfoot = new LFoot;
-  this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),10);
   //this.leftfoot.rotation.x=Math.PI/4;
   this.add(this.mybody, this.upperlegL, this.upperlegR, this.bottomlegR, this.bottomlegL, this.leftfoot);
 }
