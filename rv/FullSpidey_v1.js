@@ -5,6 +5,7 @@ function TopLLeg(){
   THREE.Object3D.call(this);
   this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
+  //this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry)
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg);
@@ -39,6 +40,7 @@ function BottomLLeg(){
   this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
   this.topblleg.rotation.z=-Math.PI/3;
+  this.topblleg.rotation.y=Math.PI/6; 
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg);
   this.add(this.topblleg);
@@ -95,7 +97,7 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
-  fullbody.rotation.z += 0.005;
+  fullbody.rotation.z -= 0.005;
   //camera.lookAt(scene.position);
   fullbody.upperlegL.rotation.z += step1;
   if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
