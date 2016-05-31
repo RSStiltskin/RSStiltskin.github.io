@@ -10,7 +10,7 @@ var LUlegrot = 2*Math.PI/3;
 function TopLLeg(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
-	this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
   this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({map: this.texturelegs}) );
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({map: this.texturelegs}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
@@ -36,8 +36,10 @@ LFoot.prototype = new THREE.Object3D;
 
 function TopRLeg(){
   THREE.Object3D.call(this);
-  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
-  this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.toprleg.rotation.z=2*Math.PI/3;
   this.toprleg.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.add(this.unionrleg, this.toprleg);
@@ -61,8 +63,10 @@ RFoot.prototype = new THREE.Object3D;
 
 function BottomRLeg(){
   THREE.Object3D.call(this);
-  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
-  this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.add(this.unionbrleg, this.topbrleg);
@@ -86,8 +90,10 @@ BRFoot.prototype = new THREE.Object3D;
 
 function BottomLLeg(){
   THREE.Object3D.call(this);
-  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
-  this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg, this.topblleg);
@@ -111,7 +117,9 @@ BLFoot.prototype = new THREE.Object3D;
 
 function SpideyBody(){
   THREE.Object3D.call(this);
-  this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshLambertMaterial({color:0xFF0000}) );
+  THREE.ImageUtils.crossOrigin = '';
+  this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
+  this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.add(this.fatbody);
 }
 SpideyBody.prototype = new THREE.Object3D;
