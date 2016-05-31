@@ -80,8 +80,8 @@ function setup(){
   scene = new THREE.Scene();
   scene.add(fullbody);
   camera = new THREE.PerspectiveCamera();
-  camera.position.z=80;
- 
+  camera.position.set(10,10,80);
+  //camera.lookAt(scene.position);
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerHeight, window.innerHeight);
   document.body.appendChild(renderer.domElement);
@@ -89,24 +89,19 @@ function setup(){
 
 function loop(){
   requestAnimationFrame( loop );
-  
   fullbody.upperlegL.rotation.z += step1;
   if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
     step1 = -step1;
-  
   fullbody.upperlegR.rotation.z += step2;
   if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
     step2 = -step2;
-  
   fullbody.bottomlegL.rotation.z += step3;
   if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
     step3 = -step3;
-  
   fullbody.bottomlegR.rotation.z += step4;
   if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
     step4 = -step4;
- 
-  camera.lookAt(100,100,100);
+  camera.lookAt(scene.position);
   renderer.render (scene, camera);
 }
 
