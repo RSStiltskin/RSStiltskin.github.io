@@ -79,11 +79,11 @@ function setup(){
   step4 = 0.017;
   scene = new THREE.Scene();
   scene.add(fullbody);
-  camera = new THREE.PerspectiveCamera();
-  camera.position.set(10,10,80);
+  camera = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight,1,1000);
+  camera.position.set(20,20,80);
   //camera.lookAt(scene.position);
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerHeight, window.innerHeight);
+  renderer.setSize( window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 }
 
