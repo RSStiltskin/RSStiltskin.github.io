@@ -20,7 +20,7 @@ function LFoot(){
   //this.toplfoot.rotation.y=Math.PI/3;
   this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0)
   //this.toplfoot.rotation.x=-2*Math.PI/3;
-  this.toplfoot.position.set(-22*Math.cos(Math.PI/6),22*Math.sin(Math.PI/6),0);
+  this.toplfoot.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg2, this.toplfoot);
 }
 
@@ -99,7 +99,7 @@ function setup(){
   scene = new THREE.Scene();
   scene.add(fullbody, axisHelper);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
-  camera.position.set(15,25,60);
+  camera.position.set(0,0,60);
   //camera.rotation.x = Math.PI/6;
   //camera.rotation.z = Math.PI/3;
   //camera.rotation.y = -Math.PI/3;
