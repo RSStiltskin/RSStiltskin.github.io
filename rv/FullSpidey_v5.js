@@ -119,10 +119,10 @@ function SpideyBody(){
   THREE.Object3D.call(this);
   THREE.ImageUtils.crossOrigin = '';
   this.texturelegs = THREE.ImageUtils.loadTexture('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/squaremask.jpg');
-  this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
+  this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(30,20,20), new THREE.MeshLambertMaterial({map: this.texturelegs}) );
   this.fatbody.rotation.x=-Math.PI/2;
   this.fatbody.rotation.y=Math.PI/2;
-  this.fatbody.rotation.z=Math.PI/4;
+  this.fatbody.rotation.z=Math.PI/2;
   this.add(this.fatbody);
 }
 SpideyBody.prototype = new THREE.Object3D;
@@ -164,13 +164,13 @@ function FullSpider(){
   THREE.Object3D.call(this);
   this.mybody = new SpideyBody;
   this.myoneleg = new LegOne;
-  this.myoneleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.myoneleg.position.set(-30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   this.mytwoleg = new LegTwo;
-  this.mytwoleg.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.mytwoleg.position.set(30*Math.cos(Math.PI/6),30*Math.sin(Math.PI/6),0);
   this.myfourleg = new LegFour;
-  this.myfourleg.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0)
+  this.myfourleg.position.set(-30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0)
   this.mythreeleg = new LegThree;
-  this.mythreeleg.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
+  this.mythreeleg.position.set(30*Math.cos(Math.PI/6),-30*Math.sin(Math.PI/6),0);
   this.add(this.mybody, this.mytwoleg, this.mythreeleg, this.myfourleg, this.myoneleg);
 }
 FullSpider.prototype = new THREE.Object3D;
