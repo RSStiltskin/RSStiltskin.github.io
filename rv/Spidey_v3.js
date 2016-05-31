@@ -61,6 +61,7 @@ function SpideyBody(){
 SpideyBody.prototype = new THREE.Object3D;
 
 function FullSpider(){
+  THREE.Object3D.call(this);
   this.mybody = new SpideyBody;
   this.upperlegL = new TopLLeg;
   this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
