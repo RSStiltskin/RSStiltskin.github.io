@@ -70,6 +70,7 @@ function FullSpider(){
   this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.bottomlegR = new BottomRLeg;
   this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
+  this.add(this.mybody,this.upperlegL, this. upperlegR, this.bottomlegR, this.bottomlegL)
 }
 
 function setup(){
