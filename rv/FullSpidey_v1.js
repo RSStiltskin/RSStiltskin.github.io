@@ -12,7 +12,7 @@ function TopLLeg(){
 }
 TopLLeg.prototype = new THREE.Object3D;
 
-funtion LFoot(){
+function LFoot(){
   THREE.Object3D.call(this);
   this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
