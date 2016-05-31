@@ -75,21 +75,30 @@ function SpideyBody(){
 }
 SpideyBody.prototype = new THREE.Object3D;
 
+function LegOne(){
+  THREE.Object3D.call(this);
+  this.oneupleg = new TopLLeg;
+  this.onedwleg = new LFoot;
+  this.add(this.oneupleg, this.onedwleg);
+}
+
 function FullSpider(){
   THREE.Object3D.call(this);
   this.mybody = new SpideyBody;
-  this.upperlegL = new TopLLeg;
-  this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  //this.upperlegL = new TopLLeg;
+  //this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.myoneleg = new LegOne;
+  this.myoneleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.upperlegR = new TopRLeg;
   this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.bottomlegL = new BottomLLeg;
   this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.bottomlegR = new BottomRLeg;
   this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
-  this.leftfoot = new LFoot;
-  this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  //this.leftfoot = new LFoot;
+  //this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   //this.leftfoot.rotation.x=Math.PI/4;
-  this.add(this.mybody, this.upperlegL, this.upperlegR, this.bottomlegR, this.bottomlegL, this.leftfoot);
+  this.add(this.mybody, this.upperlegL, this.upperlegR, this.bottomlegR, this.bottomlegL,this.myoneleg);
 }
 FullSpider.prototype = new THREE.Object3D;
 
@@ -97,7 +106,7 @@ function setup(){
   var axisHelper = new THREE.AxisHelper( 50 );
   //scene.add( axisHelper );
   fullbody = new FullSpider;
-  //fullbody.rotation.x = Math.PI/2;
+  fullbody.rotation.x = Math.PI/2;
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
@@ -105,7 +114,7 @@ function setup(){
   scene = new THREE.Scene();
   scene.add(fullbody, axisHelper);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
-  camera.position.set(0,0,60);
+  camera.position.set(15,25,60);
   //camera.rotation.x = Math.PI/6;
   //camera.rotation.z = Math.PI/3;
   //camera.rotation.y = -Math.PI/3;
@@ -117,11 +126,11 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
-  //fullbody.rotation.z -= 0.005;
+  fullbody.rotation.z -= 0.005;
   //camera.lookAt(scene.position);
-  //fullbody.upperlegL.rotation.z += step1;
-  //if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
-  //  step1 = -step1;
+  fullbody.myoneleg.rotation.z += step1;
+  if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
+    step1 = -step1;
   //fullbody.upperlegR.rotation.z += step2;
   //if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
   //  step2 = -step2;
