@@ -84,7 +84,7 @@ function FullSpider(){
   this.bottomlegR = new BottomRLeg;
   this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.leftfoot = new LFoot;
-  this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),10);
+  this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   //this.leftfoot.rotation.x=Math.PI/4;
   this.add(this.mybody, this.upperlegL, this.upperlegR, this.bottomlegR, this.bottomlegL, this.leftfoot);
 }
