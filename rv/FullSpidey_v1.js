@@ -16,11 +16,11 @@ function LFoot(){
   THREE.Object3D.call(this);
   this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
-  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,6,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
+  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   
   this.toplelbow.rotation.z=-Math.PI;
   this.toplelbow.rotation.x=Math.PI/2
-  this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-6);
+  this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
   
   this.toplfoot.rotation.x=Math.PI/2;
   this.toplfoot.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),10);
