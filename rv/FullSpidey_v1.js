@@ -58,7 +58,6 @@ function FullSpider(){
   this.mybody = new SpideyBody;
   this.upperlegL = new TopLLeg;
   this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  this.upperlegL.rotation.x = Math.PI/6;
   this.upperlegR = new TopRLeg;
   this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.bottomlegL = new BottomLLeg;
