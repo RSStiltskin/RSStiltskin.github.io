@@ -62,12 +62,6 @@
     step4 = 0.017;
     scene = new THREE.Scene();
     scene.add(fatbody, unionblleg,topblleg,unionrleg,topbrleg,unionrleg,toprleg,unionlleg,toplleg);
-    camera = new THREE.PerspectiveCamera();
-    camera.position.z=80;
-    
-    renderer = new THREE.WebGLRenderer();
-    renderer.setSize( window.innerHeight, window.innerHeight);
-    document.body.appendChild(renderer.domElement);
 }
 
 function loop(){
