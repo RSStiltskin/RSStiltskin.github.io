@@ -130,7 +130,7 @@ function loop(){
   fullbody.rotation.z -= 0.005;
   //camera.lookAt(scene.position);
   fullbody.myoneleg.rotation.z += step1;
-  if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
+  if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
     step1 = -step1;
   //fullbody.upperlegR.rotation.z += step2;
   //if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
