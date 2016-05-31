@@ -28,7 +28,7 @@ LFoot.prototype = new THREE.Object3D;
 
 function TopRLeg(){
   THREE.Object3D.call(this);
-  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xDF7401, wireframe: true}) );
+  this.unionrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshPhongMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
   this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0xDBA901, wireframe: true}) );
   this.toprleg.rotation.z=2*Math.PI/3;
   this.toprleg.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
@@ -53,7 +53,7 @@ RFoot.prototype = new THREE.Object3D;
 
 function BottomRLeg(){
   THREE.Object3D.call(this);
-  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xDF7401, wireframe: true}) );
+  this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshPhongMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
   this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0xDBA901, wireframe: true}) );
   this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
@@ -78,7 +78,7 @@ BRFoot.prototype = new THREE.Object3D;
 
 function BottomLLeg(){
   THREE.Object3D.call(this);
-  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xDF7401, wireframe: true}) );
+  this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshPhongMaterial({color:0xFF0000,emissive:0x2E2E2E, specular:0xFFFF00}) );
   this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0xDBA901, wireframe: true}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
@@ -163,11 +163,11 @@ function setup(){
   fullbody.rotation.x = Math.PI/2;
   lights[0] = new THREE.PointLight(0xffffff, 1, 0);
   lights[1] = new THREE.PointLight(0xffffff, 1, 0);
-  lights[2] = new THREE.PointLight(0xffffff, 1, 0);
+  //lights[2] = new THREE.PointLight(0xffffff, 1, 0);
   
   lights[0].position.set(0, -200, 0);
   lights[1].position.set(200, 200, -200);
-  lights[2].position.set(-200, 200, 200);
+  //lights[2].position.set(-200, 200, 200);
   
   step1 = 0.01;
   step2 = 0.02;
@@ -178,7 +178,7 @@ function setup(){
   scene.add(fullbody, axisHelper);
   scene.add(lights[0]);
   scene.add(lights[1]);
-  scene.add(lights[2])
+  //scene.add(lights[2])
   
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(15,25,60);
