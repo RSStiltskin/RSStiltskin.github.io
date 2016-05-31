@@ -8,7 +8,7 @@
 //this.unionleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
 //function TpLft(){
 var scene, camera, renderer;
-var step, fullbody;
+var step1, step2, step3, fullbody;
 var LUlegrot = 2*Math.PI/3;
 function TopLLeg(){
   THREE.Object3D.call(this);
@@ -82,7 +82,9 @@ FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
   fullbody = new FullSpider;
-  step = 0.01;
+  step1 = 0.01;
+  step2 = 0.02;
+  step3 = 0.015;
   scene = new THREE.Scene();
   scene.add(fullbody);
   camera = new THREE.PerspectiveCamera();
@@ -95,15 +97,23 @@ function setup(){
 
 function loop(){
   requestAnimationFrame( loop );
-  fullbody.upperlegL.rotation.z += step;
+  
+  fullbody.upperlegL.rotation.z += step1;
   if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
-    step = -step;
+    step1 = -step1;
   
-  //if( LUlegrot > 3*Math.PI/4 )
-  // fullbody.upperlegL.rotation.z -= LUlegrot - 0.01;
-  //if( LUlegrot < 7*Math.PI/8 )
-  // fullbody.upperlegL.rotation.z += LUlegrot + 0.01;
+  fullbody.upperlegR.rotation.z += step2;
+  if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
+    step2 = -step;
   
+  fullbody.bottomlegL.rotation.z += step3;
+  if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
+    step3 = -step3;
+  
+  fullbody.bottomlegR.rotation.z += step3;
+  if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
+    step3 = -step3;
+ 
   renderer.render (scene, camera);
 }
 
