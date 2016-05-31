@@ -37,7 +37,7 @@ function BottomRLeg(){
   THREE.Object3D.call(this);
   this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  this.topbrleg.rotation.z=*Math.PI/3;
+  this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.add(this.unionbrleg);
   this.add(this.topbrleg);
