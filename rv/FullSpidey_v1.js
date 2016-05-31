@@ -91,7 +91,7 @@ function setup(){
   var axisHelper = new THREE.AxisHelper( 50 );
   //scene.add( axisHelper );
   fullbody = new FullSpider;
-  fullbody.rotation.x = Math.PI/2;
+  //fullbody.rotation.x = Math.PI/2;
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
@@ -111,7 +111,7 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
-  fullbody.rotation.z -= 0.005;
+  //fullbody.rotation.z -= 0.005;
   //camera.lookAt(scene.position);
   fullbody.upperlegL.rotation.z += step1;
   if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
