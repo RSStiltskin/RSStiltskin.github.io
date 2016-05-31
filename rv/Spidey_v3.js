@@ -96,10 +96,10 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   fullbody.upperlegL.rotation.z += LUlegrot + 0.01;
-  if( LUlegrot > 3*Math.PI/4 )
-   fullbody.upperlegL.rotation.z -= LUlegrot - 0.01;
-  if( LUlegrot < 7*Math.PI/8 )
-   fullbody.upperlegL.rotation.z += LUlegrot + 0.01;
+  //if( LUlegrot > 3*Math.PI/4 )
+  // fullbody.upperlegL.rotation.z -= LUlegrot - 0.01;
+  //if( LUlegrot < 7*Math.PI/8 )
+  // fullbody.upperlegL.rotation.z += LUlegrot + 0.01;
   
   renderer.render (scene, camera);
 }
