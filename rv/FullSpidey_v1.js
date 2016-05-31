@@ -5,11 +5,11 @@ function TopLLeg(){
   THREE.Object3D.call(this);
   this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  //this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry)
+  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
-  this.add(this.unionlleg);
-  this.add(this.toplleg);
+  this.unionlleg2.position.set(-36*Math.cos(Math.PI/6),36*Math.sin(Math.PI/6),0);
+  this.add(this.unionlleg, this.toplleg, this.unionlleg2);
 }
 TopLLeg.prototype = new THREE.Object3D;
 
