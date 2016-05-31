@@ -58,7 +58,7 @@ function FullSpider(){
   this.mybody = new SpideyBody;
   this.upperlegL = new TopLLeg;
   this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  this.upperlegL.rotation.x = Math.PI/9;
+  this.upperlegL.rotation.x = Math.PI/6;
   this.upperlegR = new TopRLeg;
   this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.bottomlegL = new BottomLLeg;
@@ -77,7 +77,7 @@ function setup(){
   var axisHelper = new THREE.AxisHelper( 50 );
   //scene.add( axisHelper );
   fullbody = new FullSpider;
-  fullbody.rotation.x = Math.PI/2;
+  //fullbody.rotation.x = Math.PI/2;
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
