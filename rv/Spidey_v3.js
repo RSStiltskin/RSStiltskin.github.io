@@ -1,5 +1,5 @@
-var xleg = 20*Math.cos(Math.PI/6));
-var yleg = 20*Math.sin(Math.PI/6));
+var xleg = 20*Math.cos(Math.PI/6);
+var yleg = 20*Math.sin(Math.PI/6);
 
 var scene, camera, renderer;
 var step, mybody, upperleg1, upperleg2;
@@ -33,10 +33,10 @@ function setup(){
   mybody = new SpideyBody;
   upperleg1 = new TopLeg;
   upperleg1.rotation.z = -2*Math.PI/3;
-  upperleg1.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
+  upperleg1.position.set(-xleg-8*Math.cos(Math.PI/6),yleg+8*Math.sin(Math.PI/6),0);
   upperleg2 = new TopLeg;
   upperleg2.rotation.z = 2*Math.PI/3;
-  upperleg2.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0)
+  upperleg2.position.set(xleg+8*Math.cos(Math.PI/6),yleg+8*Math.sin(Math.PI/6),0)
   step = .01;
   scene = new THREE.Scene();
   scene.add(mybody, upperleg1, upperleg2);
