@@ -9,7 +9,7 @@ function TopLLeg(){
   this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   //this.toplfoot.rotation.x=Math.PI/4;
   //this.toplfoot.rotation.z=Math.PI/4;
-  this.toplfoot.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
+  this.toplfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
   this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
