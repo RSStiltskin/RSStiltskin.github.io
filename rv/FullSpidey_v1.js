@@ -55,10 +55,8 @@ function BottomRLeg(){
   THREE.Object3D.call(this);
   this.unionbrleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topbrleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  //this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.topbrleg.rotation.z=Math.PI/3;
   this.topbrleg.position.set(8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
-  //this.unionbrleg.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
   this.add(this.unionbrleg, this.topbrleg);
 }
 BottomRLeg.prototype = new THREE.Object3D;
@@ -82,10 +80,8 @@ function BottomLLeg(){
   THREE.Object3D.call(this);
   this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
-  //this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xFFFFFF, wireframe:true}) );
   this.topblleg.rotation.z=-Math.PI/3;
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
-  //this.unionblleg.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg, this.topblleg);
 }
 BottomLLeg.prototype = new THREE.Object3D;
@@ -148,32 +144,20 @@ LegFour.prototype = new THREE.Object3D;
 function FullSpider(){
   THREE.Object3D.call(this);
   this.mybody = new SpideyBody;
-  //this.upperlegL = new TopLLeg;
-  //this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.myoneleg = new LegOne;
   this.myoneleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  //this.upperlegR = new TopRLeg;
-  //this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.mytwoleg = new LegTwo;
   this.mytwoleg.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  //this.bottomlegL = new BottomLLeg;
-  //this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.myfourleg = new LegFour;
   this.myfourleg.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0)
-  //this.bottomlegR = new BottomRLeg;
-  //this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
   this.mythreeleg = new LegThree;
   this.mythreeleg.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
-  //this.leftfoot = new LFoot;
-  //this.leftfoot.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  //this.leftfoot.rotation.x=Math.PI/4;
   this.add(this.mybody, this.mytwoleg, this.mythreeleg, this.myfourleg, this.myoneleg);
 }
 FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
   var axisHelper = new THREE.AxisHelper( 50 );
-  //scene.add( axisHelper );
   fullbody = new FullSpider;
   fullbody.rotation.x = Math.PI/2;
   step1 = 0.01;
@@ -184,9 +168,6 @@ function setup(){
   scene.add(fullbody, axisHelper);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(15,25,60);
-  //camera.rotation.x = Math.PI/6;
-  //camera.rotation.z = Math.PI/3;
-  //camera.rotation.y = -Math.PI/3;
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
@@ -196,7 +177,6 @@ function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
   fullbody.rotation.z -= 0.005;
-  //camera.lookAt(scene.position);
   fullbody.myoneleg.rotation.z += step1;
   if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
     step1 = -step1;
