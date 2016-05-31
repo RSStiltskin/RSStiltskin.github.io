@@ -113,19 +113,19 @@ function loop(){
   camera.lookAt(scene.position);
   //fullbody.rotation.z -= 0.005;
   //camera.lookAt(scene.position);
-  fullbody.upperlegL.rotation.z += step1;
-  if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
-    step1 = -step1;
-  fullbody.upperlegR.rotation.z += step2;
-  if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
-    step2 = -step2;
-  fullbody.bottomlegL.rotation.z += step3;
-  if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
-    step3 = -step3;
-  fullbody.bottomlegR.rotation.z += step4;
-  if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
-    step4 = -step4;
-  renderer.render (scene, camera);
+  //fullbody.upperlegL.rotation.z += step1;
+  //if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
+  //  step1 = -step1;
+  //fullbody.upperlegR.rotation.z += step2;
+  //if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
+  //  step2 = -step2;
+  //fullbody.bottomlegL.rotation.z += step3;
+  //if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
+  //  step3 = -step3;
+  //fullbody.bottomlegR.rotation.z += step4;
+  //if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
+  //  step4 = -step4;
+  //renderer.render (scene, camera);
 }
 
 setup();
