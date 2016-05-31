@@ -21,10 +21,10 @@ function LFoot(){
   this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   //this.toplfoot.rotation.x=2*Math.PI/3;
   //this.toplfoot.rotation.y=Math.PI/3;
-  this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0)
+  this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   //this.toplfoot.rotation.x=-2*Math.PI/3;
   this.toplfoot.position.set(-16*Math.cos(Math.PI/6),10+16*Math.sin(Math.PI/6),0);
-  this.toplelbow.position(-16*Math.cos(Math.PI/6),-4+16*Math.sin(Math.PI/6),0)
+  this.toplelbow.position.set(-16*Math.cos(Math.PI/6),-4+16*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg2, this.toplfoot, this.toplelbow);
 }
 
