@@ -1,7 +1,5 @@
-var xleg = 20*Math.cos(Math.PI/6);
-var yleg = 20*Math.sin(Math.PI/6);
-var scene, camera, renderer;
-var step, fullbody;
+//var xleg = 20*Math.cos(Math.PI/6);
+//var yleg = 20*Math.sin(Math.PI/6);
 //var step, mybody, upperlegL, upperlegR;
 //var bottomlegR, bottomlegL;
 //var topleg, unionleg;
@@ -9,6 +7,9 @@ var step, fullbody;
 //this.topleg.position.set( xleg1, yleg1 );
 //this.unionleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
 //function TpLft(){
+var scene, camera, renderer;
+var step, fullbody;
+var LUlegrot = 2*Math.PI/3;
 function TopLLeg(){
   THREE.Object3D.call(this);
   this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
@@ -93,8 +94,14 @@ function setup(){
 }
 
 function loop(){
-requestAnimationFrame( loop );
-renderer.render (scene, camera);
+  requestAnimationFrame( loop );
+  fullbody.upperlegL.rotation.z += LUlegrot + 0.01;
+  if( LUlegrot > 3*Math.PI/4 )
+   fullbody.upperlegL.rotation.z -= LUlegrot - 0.01;
+  if( LUlegrot < 7*Math.PI/8 )
+   fullbody.upperlegL.rotation.z += LUlegrot + 0.01;
+  
+  renderer.render (scene, camera);
 }
 
 setup();
