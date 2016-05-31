@@ -125,7 +125,7 @@ function loop(){
   //fullbody.bottomlegR.rotation.z += step4;
   //if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
   //  step4 = -step4;
-  //renderer.render (scene, camera);
+  renderer.render (scene, camera);
 }
 
 setup();
