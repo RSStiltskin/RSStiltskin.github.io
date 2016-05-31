@@ -77,6 +77,7 @@ function FullSpider(){
   this.add(this.bottomlegR);
   this.add(this.bottomlegL);
 }
+FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
   fullbody = new FullSpider;
