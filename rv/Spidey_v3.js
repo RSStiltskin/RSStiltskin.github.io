@@ -16,8 +16,8 @@ function TopLLeg(){
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
-  this.add(this.unionleg);
-  this.add(this.topleg);
+  this.add(this.unionlleg);
+  this.add(this.toplleg);
 }
 TopLLeg.prototype = new THREE.Object3D;
 
@@ -27,8 +27,8 @@ function TopRLeg(){
   this.toprleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
   this.toprleg.rotation.z=-2*Math.PI/3;
   this.toprleg.position.set(8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
-  this.add(this.unionleg);
-  this.add(this.topleg);
+  this.add(this.unionrleg);
+  this.add(this.toprleg);
 }
 TopRLeg.prototype = new THREE.Object3D;
 
