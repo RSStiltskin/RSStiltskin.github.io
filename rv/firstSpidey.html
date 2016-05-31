@@ -12,16 +12,16 @@
   <body>
     <script src="three.min.js"> </script>
     <script> 
-    var escena = new THREE.Scene();
+    var scene = new THREE.Scene();
     
     var fov = 75;
     var aspect = window.innerWidth/window.innerHeight;
     var near = 0.1;
     var far = 1000;
     
-    var camara = new THREE.PerspectiveCamera( fov, aspect, near, far );
+    var camera = new THREE.PerspectiveCamera( fov, aspect, near, far );
     
-    camara.position.z = 300;
+    camera.position.z = 300;
     
     var renderer = new THREE.WebGLRenderer();
     renderer.setSize( window.innerWidth, window.innerHeight );
@@ -60,32 +60,32 @@
     step2 = 0.02;
     step3 = 0.013;
     step4 = 0.017;
-    scene = new THREE.Scene();
+    //scene = new THREE.Scene();
     scene.add(fatbody, unionblleg,topblleg,unionrleg,topbrleg,unionrleg,toprleg,unionlleg,toplleg);
 
-function loop(){
-  requestAnimationFrame( loop );
-  
-  //.rotation.z += step1;
-  //if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
-  //  step1 = -step1;
-  
-  //fullbody.upperlegR.rotation.z += step2;
-  //if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
-  //  step2 = -step2;
-  
-  //fullbody.bottomlegL.rotation.z += step3;
-  //if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
-  //  step3 = -step3;
-  
-  //fullbody.bottomlegR.rotation.z += step4;
-  //if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
-  //  step4 = -step4;
- 
+    function loop(){
+    requestAnimationFrame( loop );
+    
+    //.rotation.z += step1;
+    //if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
+    //  step1 = -step1;
+    
+    //fullbody.upperlegR.rotation.z += step2;
+    //if(Math.abs(fullbody.upperlegR.rotation.z)>Math.PI/4)
+    //  step2 = -step2;
+    
+    //fullbody.bottomlegL.rotation.z += step3;
+    //if(Math.abs(fullbody.bottomlegL.rotation.z)>Math.PI/4)
+    //  step3 = -step3;
+    
+    //fullbody.bottomlegR.rotation.z += step4;
+    //if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
+    //  step4 = -step4;
+    
     renderer.render (scene, camera);
-}
+    }
 
-loop();
-</script>
-</body>
+    loop();
+    </script>
+  </body>
 </html>
