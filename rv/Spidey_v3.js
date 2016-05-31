@@ -95,9 +95,10 @@ function setup(){
 
 function loop(){
   requestAnimationFrame( loop );
+  fullbody.upperlegL.rotation.z += step;
   if(Math.abs(fullbody.upperlegL.rotation)>Math.PI/4)
     step = -step;
-  fullbody.upperlegL.rotation.z += step;
+  
   //if( LUlegrot > 3*Math.PI/4 )
   // fullbody.upperlegL.rotation.z -= LUlegrot - 0.01;
   //if( LUlegrot < 7*Math.PI/8 )
