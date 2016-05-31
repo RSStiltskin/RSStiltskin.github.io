@@ -87,7 +87,6 @@ function setup(){
   //camera.rotation.x = Math.PI/6;
   //camera.rotation.z = Math.PI/3;
   //camera.rotation.y = -Math.PI/3;
-  camera.lookAt(scene.position);
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
@@ -96,6 +95,7 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.rotation.y += 0.01;
+  camera.lookAt(scene.position);
   fullbody.upperlegL.rotation.z += step1;
   if(Math.abs(fullbody.upperlegL.rotation.z)>Math.PI/4)
     step1 = -step1;
