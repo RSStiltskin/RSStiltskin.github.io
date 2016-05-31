@@ -79,8 +79,10 @@ function setup(){
   step4 = 0.017;
   scene = new THREE.Scene();
   scene.add(fullbody);
-  camera = new THREE.PerspectiveCamera(30, window.innerWidth/window.innerHeight,1,1000);
-  camera.position.set(20,20,80);
+  camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
+  camera.position.z = 80;
+  camera.rotation.x = Math.PI/4;
+  camera.rotation.z = Math.PI/3;
   //camera.lookAt(scene.position);
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight);
@@ -101,7 +103,7 @@ function loop(){
   fullbody.bottomlegR.rotation.z += step4;
   if(Math.abs(fullbody.bottomlegR.rotation.z)>Math.PI/4)
     step4 = -step4;
-  camera.lookAt(scene.position);
+  //camera.lookAt(scene.position);
   renderer.render (scene, camera);
 }
 
