@@ -40,7 +40,6 @@ function BottomLLeg(){
   this.unionblleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
   this.topblleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshBasicMaterial({color:0x3ADF00, wireframe: true}) );
   this.topblleg.rotation.z=-Math.PI/3;
-  this.topblleg.rotation.y=Math.PI/6; 
   this.topblleg.position.set(-8*Math.cos(Math.PI/6),-8*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg);
   this.add(this.topblleg);
@@ -59,6 +58,7 @@ function FullSpider(){
   this.mybody = new SpideyBody;
   this.upperlegL = new TopLLeg;
   this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.upperlegL.rotation.x = Math.PI/9;
   this.upperlegR = new TopRLeg;
   this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
   this.bottomlegL = new BottomLLeg;
