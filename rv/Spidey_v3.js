@@ -1,15 +1,13 @@
 var xleg = 20*Math.cos(Math.PI/6);
 var yleg = 20*Math.sin(Math.PI/6);
-
 var scene, camera, renderer;
-var step, mybody, upperlegL, upperlegR;
-var bottomlegR, bottomlegL;
+var step, fullbody;
+//var step, mybody, upperlegL, upperlegR;
+//var bottomlegR, bottomlegL;
 //var topleg, unionleg;
 //var spleg, cilleg, material1;
-
 //this.topleg.position.set( xleg1, yleg1 );
 //this.unionleg.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-
 //function TpLft(){
 function TopLLeg(){
   THREE.Object3D.call(this);
@@ -60,29 +58,25 @@ function SpideyBody(){
   this.fatbody = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshBasicMaterial({color:0xFF0000, wireframe: true}) );
   this.add(this.fatbody);
 }
-
 SpideyBody.prototype = new THREE.Object3D;
 
+funtion FullSpider(){
+  this.mybody = new SpideyBody;
+  this.upperlegL = new TopLLeg;
+  this.upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.upperlegR = new TopRLeg;
+  this.upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
+  this.bottomlegL = new BottomLLeg;
+  this.bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
+  this.bottomlegR = new BottomRLeg;
+  this.bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
+}
+
 function setup(){
-  mybody = new SpideyBody;
-  
-  upperlegL = new TopLLeg;
-  //upperlegL.rotation.z = -2*Math.PI/3;
-  upperlegL.position.set(-20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  
-  upperlegR = new TopRLeg;
-  //upperlegR.rotation.z = 2*Math.PI/3;
-  upperlegR.position.set(20*Math.cos(Math.PI/6),20*Math.sin(Math.PI/6),0);
-  
-  bottomlegL = new BottomLLeg;
-  bottomlegL.position.set(-20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
-  
-  bottomlegR = new BottomRLeg;
-  bottomlegR.position.set(20*Math.cos(Math.PI/6),-20*Math.sin(Math.PI/6),0);
-  
+  fullbody = new FullSpider;
   step = .01;
   scene = new THREE.Scene();
-  scene.add(mybody, upperlegL, upperlegR, bottomlegL, bottomlegR);
+  scene.add(fullbody);
   camera = new THREE.PerspectiveCamera();
   camera.position.z=80;
  
