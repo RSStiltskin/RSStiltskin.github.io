@@ -13,9 +13,9 @@ TopLLeg.prototype = new THREE.Object3D;
 
 function LFoot(){
   THREE.Object3D.call(this);
-  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xD7DF01, wireframe:true}) );
-  this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
-  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
+  this.unionlleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
+  this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
   this.toplelbow.rotation.z=-Math.PI;
   this.toplelbow.rotation.x=Math.PI/2;
   this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
@@ -38,9 +38,9 @@ TopRLeg.prototype = new THREE.Object3D;
 
 function RFoot(){
   THREE.Object3D.call(this);
-  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xD7DF01, wireframe:true}) );
-  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
-  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
+  this.unionrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
+  this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
   this.toprelbow.rotation.z=-Math.PI;
   this.toprelbow.rotation.x=Math.PI/2;
   this.toprelbow.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
@@ -63,9 +63,9 @@ BottomRLeg.prototype = new THREE.Object3D;
 
 function BRFoot(){
   THREE.Object3D.call(this);
-  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xD7DF01, wireframe:true}) );
-  this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
-  this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
+  this.unionbrleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
+  this.bottomrfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.bottomrelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
   this.bottomrelbow.rotation.z=-Math.PI;
   this.bottomrelbow.rotation.x=Math.PI/2;
   this.bottomrelbow.position.set(16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
@@ -88,9 +88,9 @@ BottomLLeg.prototype = new THREE.Object3D;
 
 function BLFoot(){
   THREE.Object3D.call(this);
-  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshBasicMaterial({color:0xD7DF01, wireframe:true}) );
-  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
-  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0xFFFF00, wireframe: true}));
+  this.unionblleg2 = new THREE.Mesh( new THREE.SphereGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}) );
+  this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
+  this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshPhongMaterial({color:0xFFFF00,emissive:0xFF0000, specular:0xFFBF00}));
   this.bottomlelbow.rotation.z=-Math.PI;
   this.bottomlelbow.rotation.x=Math.PI/2;
   this.bottomlelbow.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
@@ -165,7 +165,7 @@ function setup(){
   lights[1] = new THREE.PointLight(0xffffff, 1, 0);
   //lights[2] = new THREE.PointLight(0xffffff, 1, 0);
   
-  lights[0].position.set(0, 0, 200);
+  lights[0].position.set(0, 0, 100);
   lights[1].position.set(200, 200, -200);
   //lights[2].position.set(-200, 200, 200);
   
