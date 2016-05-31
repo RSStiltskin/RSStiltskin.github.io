@@ -142,7 +142,7 @@ function LegFour(){
   this.fourbtfoot = new BLFoot;
   this.add(this.fourbtleg, this.fourbtfoot);
 }
-LegThree.prototype = new THREE.Object3D;
+LegFour.prototype = new THREE.Object3D;
 
 
 function FullSpider(){
