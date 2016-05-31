@@ -23,8 +23,7 @@ function LFoot(){
   this.toplfoot.rotation.x=Math.PI/2;
   this.unionlleg2.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),0);
   this.toplfoot.position.set(-16*Math.cos(Math.PI/6),10+16*Math.sin(Math.PI/6),0);
-  this.toplelbow.position.set(-16*Math.cos(Math.PI/6),-6+16*Math.sin(Math.PI/6),0);
-  this.
+  //this.toplelbow.position.set(-16*Math.cos(Math.PI/6),-6+16*Math.sin(Math.PI/6),0);
   this.add(this.unionlleg2, this.toplfoot, this.toplelbow);
 }
 
