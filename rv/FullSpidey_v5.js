@@ -11,7 +11,7 @@ function TopLLeg(){
   THREE.Object3D.call(this);
   THREE.TextureLoader.crossOrigin='';
   var texturelegs  =THREE.TextureLoader('https://raw.githubusercontent.com/RSStiltskin/RSStiltskin.github.io/master/spiderleg.jpg');
-  this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({map: texturelegs}) );
+  this.unionlleg = new THREE.Mesh( new THREE.SphereGeometry(8,20,20), new THREE.MeshLambertMaterial({color:0xFF000,map: texturelegs}) );
   this.toplleg = new THREE.Mesh( new THREE.CylinderGeometry(8,4,16,15,10), new THREE.MeshLambertMaterial({map: texturelegs}) );
   this.toplleg.rotation.z=-2*Math.PI/3;
   this.toplleg.position.set(-8*Math.cos(Math.PI/6),8*Math.sin(Math.PI/6),0);
