@@ -17,7 +17,7 @@ function LFoot(){
   this.toplfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.toplelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.toplelbow.rotation.z=-Math.PI;
-  this.toplelbow.rotation.x=Math.PI/2
+  this.toplelbow.rotation.x=Math.PI/2;
   this.toplelbow.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
   this.toplfoot.rotation.x=Math.PI/2;
   this.toplfoot.position.set(-16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),10);
@@ -42,7 +42,7 @@ function RFoot(){
   this.toprfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.toprelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.toprelbow.rotation.z=-Math.PI;
-  this.toprelbow.rotation.x=Math.PI/2
+  this.toprelbow.rotation.x=Math.PI/2;
   this.toprelbow.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),-4);
   this.toprfoot.rotation.x=Math.PI/2;
   this.toprfoot.position.set(16*Math.cos(Math.PI/6),16*Math.sin(Math.PI/6),10);
@@ -96,14 +96,14 @@ function BLFoot(){
   this.bottomlfoot = new THREE.Mesh(new THREE.ConeGeometry(4,20,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.bottomlelbow = new THREE.Mesh(new THREE.ConeGeometry(4,8,20), new THREE.MeshBasicMaterial({color: 0x00FF80, wireframe: true}));
   this.bottomlelbow.rotation.z=-Math.PI;
-  this.bottomlelbow.rotation.x=Math.PI/2
+  this.bottomlelbow.rotation.x=Math.PI/2;
   this.bottomlelbow.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),-4);
   this.bottomlfoot.rotation.x=Math.PI/2;
   this.bottomlfoot.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),10);
   this.unionblleg2.position.set(-16*Math.cos(Math.PI/6),-16*Math.sin(Math.PI/6),0);
   this.add(this.unionblleg2, this.bottomlfoot, this.bottomlelbow);
 }
-BRFoot.prototype = new THREE.Object3D;
+BLFoot.prototype = new THREE.Object3D;
 
 function SpideyBody(){
   THREE.Object3D.call(this);
