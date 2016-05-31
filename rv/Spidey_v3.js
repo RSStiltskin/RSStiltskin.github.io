@@ -82,7 +82,7 @@ FullSpider.prototype = new THREE.Object3D;
 
 function setup(){
   fullbody = new FullSpider;
-  step = .01;
+  step = 0.01;
   scene = new THREE.Scene();
   scene.add(fullbody);
   camera = new THREE.PerspectiveCamera();
@@ -95,7 +95,9 @@ function setup(){
 
 function loop(){
   requestAnimationFrame( loop );
-  fullbody.upperlegL.rotation.z += 0.01;
+  if(Math.abs(fullbody.upperlegL.rotation)>Math.PI/4)
+    step = -step;
+  fullbody.upperlegL.rotation.z += step;
   //if( LUlegrot > 3*Math.PI/4 )
   // fullbody.upperlegL.rotation.z -= LUlegrot - 0.01;
   //if( LUlegrot < 7*Math.PI/8 )
