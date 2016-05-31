@@ -80,7 +80,7 @@ function setup(){
   scene = new THREE.Scene();
   scene.add(fullbody);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
-  camera.position.set(50,50,80);
+  camera.position.set(10,-50,80);
   camera.rotation.x = Math.PI/6;
   //camera.rotation.z = Math.PI/3;
   //camera.rotation.y = -Math.PI/3;
