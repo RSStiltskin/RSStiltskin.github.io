@@ -266,7 +266,7 @@ LFoot.prototype = new THREE.Object3D;
   fullbody.position.x += rotx;
   fullbody.position.y += roty;
 
-  if((obstacle1.length > 0 && (obstacle1[0].distance <= 3))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 3))){
+  if((obstacle1.length > 0 && (obstacle1[0].distance <= 3))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 3)))
   fullbody.rotation.z = rotz;
 
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 3))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 3)))
