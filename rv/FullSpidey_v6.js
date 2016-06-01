@@ -280,7 +280,7 @@ LFoot.prototype = new THREE.Object3D;
 
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
-  fullbody.position.x += roty;}
+  fullbody.position.y += roty;}
   
   raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
 	raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
