@@ -243,8 +243,8 @@ LFoot.prototype = new THREE.Object3D;
 	  step2 = 0.02;
 	  step3 = 0.013;
 	  step4 = 0.017;
-  rotx = 0.1;
-  roty = 0.1;
+  rotx = 1;
+  roty = 1;
   rotz = Math.PI/2;
 	  
 	  scene = new THREE.Scene();
