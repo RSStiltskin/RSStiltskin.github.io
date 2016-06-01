@@ -245,7 +245,7 @@ LFoot.prototype = new THREE.Object3D;
 	  step4 = 0.017;
   rotx = 0.1;
   roty = 0.1;
-  rotz = Math.PI/4;
+  rotz = Math.PI/2;
 	  
 	  scene = new THREE.Scene();
 	  scene.add(fullbody, axisHelper);
