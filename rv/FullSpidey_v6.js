@@ -209,7 +209,7 @@ LFoot.prototype = new THREE.Object3D;
 	  var axisHelper = new THREE.AxisHelper( 50 );
           //var Thewall1, Thewall2, Thewall3, Thewall4;
 	  fullbody = new FullSpider;
-	  //fullbody.rotation.x = Math.PI/2;
+	  fullbody.rotation.x = Math.PI;
 	  lights[0] = new THREE.PointLight(0xffffff, 1, 0);
 	  lights[1] = new THREE.PointLight(0xffffff, 1, 0);
 	  //lights[2] = new THREE.PointLight(0xffffff, 1, 0);
@@ -218,10 +218,10 @@ LFoot.prototype = new THREE.Object3D;
 	  lights[1].position.set(200, 200, -200);
 	  //lights[2].position.set(-200, 200, 200);
 	  
-	Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,100,20), new THREE.MeshNormalMaterial());
-  Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,100,20), new THREE.MeshNormalMaterial());
-  Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(100,10,20), new THREE.MeshNormalMaterial());
-  Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(100,10,20), new THREE.MeshNormalMaterial());
+	Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,200,20), new THREE.MeshNormalMaterial());
+  Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,200,20), new THREE.MeshNormalMaterial());
+  Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(200,10,20), new THREE.MeshNormalMaterial());
+  Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(200,10,20), new THREE.MeshNormalMaterial());
   
   //Thewall1.rotation.x = Math.PI/2;
   //Thewall2.rotation.x = Math.PI/2;
@@ -242,8 +242,8 @@ LFoot.prototype = new THREE.Object3D;
 	  step2 = 0.02;
 	  step3 = 0.013;
 	  step4 = 0.017;
-  rotx = 0.01;
-  roty = 0.01;
+  rotx = 0.05;
+  roty = 0.05;
   rotz = Math.PI/9;
 	  
 	  scene = new THREE.Scene();
