@@ -2,6 +2,7 @@ var scene, camera, renderer;
 var step1, step2, step3, step4, fullbody;
 var rotx, roty, rotz;
 var obstacle1, obstacle2, obstacle3, obstacle4;
+var Thewall1, Thewall2, Thewall3, Thewall4;
 	
 
 function TopLLeg(){
@@ -206,7 +207,7 @@ LFoot.prototype = new THREE.Object3D;
 	function setup(){
 	  var lights = [];
 	  var axisHelper = new THREE.AxisHelper( 50 );
-  var Thewall1, Thewall2, Thewall3, Thewall4;
+          //var Thewall1, Thewall2, Thewall3, Thewall4;
 	  fullbody = new FullSpider;
 	  fullbody.rotation.x = Math.PI/2;
 	  lights[0] = new THREE.PointLight(0xffffff, 1, 0);
