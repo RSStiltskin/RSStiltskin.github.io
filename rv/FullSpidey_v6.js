@@ -218,10 +218,10 @@ LFoot.prototype = new THREE.Object3D;
 	  lights[1].position.set(200, 200, -200);
 	  //lights[2].position.set(-200, 200, 200);
 	  
-	Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,200,20), new THREE.MeshNormalMaterial());
-  Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,200,20), new THREE.MeshNormalMaterial());
-  Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(200,10,20), new THREE.MeshNormalMaterial());
-  Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(200,10,20), new THREE.MeshNormalMaterial());
+	Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+  Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+  Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+  Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
   
   //Thewall1.rotation.x = Math.PI/2;
   //Thewall2.rotation.x = Math.PI/2;
@@ -244,7 +244,7 @@ LFoot.prototype = new THREE.Object3D;
 	  step4 = 0.017;
   rotx = 0.05;
   roty = 0.05;
-  rotz = Math.PI/9;
+  rotz = Math.PI/4;
 	  
 	  scene = new THREE.Scene();
 	  scene.add(fullbody, axisHelper);
@@ -272,10 +272,10 @@ LFoot.prototype = new THREE.Object3D;
   fullbody.position.x += rotx;
   fullbody.position.y += roty;
 
-  if((obstacle1.length > 0 && (obstacle1[0].distance <= 3))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 3)))
+  if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 50)))
   fullbody.rotation.z = rotz;
 
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 3))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 3)))
+  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 50)))
   fullbody.rotation.z = rotz;
 	
 //fullbody.rotation.z -= 0.005;
