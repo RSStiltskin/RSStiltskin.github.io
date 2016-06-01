@@ -228,10 +228,10 @@ LFoot.prototype = new THREE.Object3D;
   Thewall3.rotation.x = Math.PI/2;
   Thewall4.rotation.x = Math.PI/2;
 
-  Thewall1.position.set(100,0,-10);
-  Thewall2.position.set(-100,0,-10); 
-  Thewall3.position.set(0,100,-10); 
-  Thewall4.position.set(0,-100,-10); 
+  Thewall1.position.set(100,0,0);
+  Thewall2.position.set(-100,0,0); 
+  Thewall3.position.set(0,100,0); 
+  Thewall4.position.set(0,-100,0); 
 
   raycaster1 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(1,0,0));
   raycaster2 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(-1,0,0));
@@ -253,7 +253,7 @@ LFoot.prototype = new THREE.Object3D;
 	  scene.add(Thewall1, Thewall2, Thewall3, Thewall4);
 	  
 	  camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
-	  camera.position.set(15,25,120);
+	  camera.position.set(0,0,120);
 	  renderer = new THREE.WebGLRenderer();
 	  renderer.setSize( window.innerWidth, window.innerHeight);
 	  document.body.appendChild(renderer.domElement);
