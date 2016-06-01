@@ -222,6 +222,11 @@ LFoot.prototype = new THREE.Object3D;
   Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,100,20), new THREE.MeshNormalMaterial());
   Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(100,10,20), new THREE.MeshNormalMaterial());
   Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(100,10,20), new THREE.MeshNormalMaterial());
+  
+  Thewall1.rotation.x = Math.PI/2;
+  Thewall2.rotation.x = Math.PI/2;
+  Thewall3.rotation.x = Math.PI/2;
+  Thewall4.rotation.x = Math.PI/2;
 
   Thewall1.position.set(100,0,-10);
   Thewall2.position.set(-100,0,-10); 
