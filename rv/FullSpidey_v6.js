@@ -270,7 +270,7 @@ LFoot.prototype = new THREE.Object3D;
   obstacle4 = raycaster4.intersectObject(Thewall4);
   
   fullbody.position.x += rotx;
-  fullbody.position.y += roty;
+  //fullbody.position.y += roty;
 
   if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 50)))
   fullbody.rotation.z = rotz;
