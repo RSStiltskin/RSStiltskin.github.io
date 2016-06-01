@@ -2,6 +2,7 @@ var scene, camera, renderer;
 var step1, step2, step3, step4, fullbody;
 var rotx, roty, rotz;
 var obstacle1, obstacle2, obstacle3, obstacle4;
+var raycaster1, raycaster2, raycaster3, raycaster4;
 var Thewall1, Thewall2, Thewall3, Thewall4;
 	
 
@@ -272,15 +273,19 @@ LFoot.prototype = new THREE.Object3D;
   //fullbody.position.x += rotx;
   fullbody.position.y += roty;
 
-  if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 50)))
+  if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   //fullbody.position.x += rotx;
-  fullbody.position.y += roty;
+  fullbody.position.y += roty;}
 
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 50)))
+  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
-  fullbody.position.x += rotx;
+  fullbody.position.x += roty;}
   
+  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+	raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+	raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  	raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
 	
 //fullbody.rotation.z -= 0.005;
 	  fullbody.myoneleg.rotation.z += step1;
@@ -298,7 +303,8 @@ LFoot.prototype = new THREE.Object3D;
 	  renderer.render (scene, camera);
 	}
 	
-	raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+	
+
 	
 
 	setup();
