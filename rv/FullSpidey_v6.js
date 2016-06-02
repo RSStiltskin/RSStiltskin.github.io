@@ -250,57 +250,24 @@ function loop(){
   obstacle3 = raycaster3.intersectObject(Thewall3);
   obstacle4 = raycaster4.intersectObject(Thewall4);
   
-  //fullbody.position.x += rotx;
-  //fullbody.position.y += roty;
-  
   fullbody.position.y += roty;
   fullbody.position.x += rotx;
-  //raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
 
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))||(obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.x -= rotx;
-  //raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
-  //raycaster1.set( fullbody.position, new THREE.Vector3(0,-1,0) );
-  //raycaster2.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  //raycaster3.set( fullbody.position, new THREE.Vector3(1,0,0) );
-  //raycaster4.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-  }
+  fullbody.position.y -= rotx;}
   
   if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))||(obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
   fullbody.rotation.z = rotz;
-  fullbody.position.y -= roty;
-  //raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
-  //raycaster1.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-  //raycaster2.set( fullbody.position, new THREE.Vector3(1,0,0) );
-  //raycaster3.set( fullbody.position, new THREE.Vector3(0,-1,0) );
-  //raycaster4.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  }
-  //fullbody.position.y += roty;}
-  //if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
-  //fullbody.rotation.z = rotz;
-  //fullbody.position.x -= rotx;}
-  //raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-  //raycaster1.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  //raycaster2.set( fullbody.position, new THREE.Vector3(0,-1,0) );
-  //raycaster3.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-  //raycaster4.set( fullbody.position, new THREE.Vector3(1,0,0) );}
-  
-  //if((obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
-  //fullbody.rotation.z = rotz;
-  //fullbody.position.y += roty;}
-  //raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  //raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
-  //raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-  //raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  //raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );}
+  fullbody.position.x -= rotx;
+  fullbody.position.y -= roty;}
  
   raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
   raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
   raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
   raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
-	
-//fullbody.rotation.z -= 0.005;
+
   fullbody.myoneleg.rotation.z += step1;
   if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
     step1 = -step1;
