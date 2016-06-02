@@ -251,7 +251,7 @@ function loop(){
   obstacle4 = raycaster4.intersectObject(Thewall4);
   
   //fullbody.position.x += rotx;
-  fullbody.position.y += roty;
+  //fullbody.position.y += roty;
 
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
   fullbody.rotation.z = rotz;
