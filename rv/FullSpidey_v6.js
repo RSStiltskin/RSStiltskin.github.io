@@ -251,50 +251,48 @@ function loop(){
   obstacle4 = raycaster4.intersectObject(Thewall4);
   
   //fullbody.position.x += rotx;
-  fullbody.position.y += roty;
+  //fullbody.position.y += roty;
 
   if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.y -= roty;}
   //fullbody.position.y += roty;}
-  if((obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
+  else if((obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.y += roty;}
 
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
+  else if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.x += rotx;}
   
-  if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
+  else if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.x -= rotx;}
   
+  else fullbody.position.y += roty;
+  
   raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
-	raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-	raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  	raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
 	
 //fullbody.rotation.z -= 0.005;
-	  fullbody.myoneleg.rotation.z += step1;
-	  if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
-	    step1 = -step1;
-	  fullbody.mytwoleg.rotation.z += step2;
-	  if(Math.abs(fullbody.mytwoleg.rotation.z)>Math.PI/4)
-	    step2 = -step2;
-	  fullbody.myfourleg.rotation.z += step3;
-	  if(Math.abs(fullbody.myfourleg.rotation.z)>Math.PI/4)
-	    step3 = -step3;
-	  fullbody.mythreeleg.rotation.z += step4;
-	  if(Math.abs(fullbody.mythreeleg.rotation.z)>Math.PI/4)
-	    step4 = -step4;
-	  renderer.render (scene, camera);
-	}
+  fullbody.myoneleg.rotation.z += step1;
+  if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
+    step1 = -step1;
+  fullbody.mytwoleg.rotation.z += step2;
+  if(Math.abs(fullbody.mytwoleg.rotation.z)>Math.PI/4)
+    step2 = -step2;
+  fullbody.myfourleg.rotation.z += step3;
+  if(Math.abs(fullbody.myfourleg.rotation.z)>Math.PI/4)
+    step3 = -step3;
+  fullbody.mythreeleg.rotation.z += step4;
+  if(Math.abs(fullbody.mythreeleg.rotation.z)>Math.PI/4)
+    step4 = -step4;
+  renderer.render (scene, camera);
+}
 	
-	
-
-	
-
-	setup();
-	loop();
+setup();
+loop();
 
 
