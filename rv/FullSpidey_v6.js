@@ -256,26 +256,51 @@ function loop(){
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.x += rotx;
-  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );}
+  //raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  }
   
   else if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.y -= roty;
-  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );}
+  //raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  }
   //fullbody.position.y += roty;}
   else if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.y -= rotx;
-  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );}
+  //raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  }
   
   else if((obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.y += roty;
-  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );}
+  //raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  }
   
   else{
   fullbody.position.y += roty;
-  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );} 
+  //raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
+  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+  } 
   
   //raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
   //raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
