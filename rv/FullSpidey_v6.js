@@ -256,7 +256,7 @@ function loop(){
   raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
 
   fullbody.position.y += roty;
-  fullbody.position.x += rotx;	
+  //fullbody.position.x += rotx;	
 
   fullbody.myoneleg.rotation.z += step1;
   if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
