@@ -258,7 +258,7 @@ function loop(){
 
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
   fullbody.rotation.z = rotz;
-  fullbody.position.x += rotx;
+  fullbody.position.y += rotx;
   //raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
   //raycaster1.set( fullbody.position, new THREE.Vector3(0,-1,0) );
   //raycaster2.set( fullbody.position, new THREE.Vector3(0,1,0) );
