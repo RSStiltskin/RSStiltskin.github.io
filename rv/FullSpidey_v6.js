@@ -269,7 +269,7 @@ function loop(){
   fullbody.rotation.z = rotz;
   fullbody.position.x -= rotx;}
   
-  else fullbody.position.y += roty;
+  //else fullbody.position.y += roty;
   
   raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
   raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
