@@ -235,10 +235,11 @@ function loop(){
   obstacle2 = raycaster2.intersectObject(Thewall2);
   obstacle3 = raycaster3.intersectObject(Thewall3);
   obstacle4 = raycaster4.intersectObject(Thewall4);
-  fullbody.position.y += roty;
-  fullbody.position.x += rotx;
   
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))||(obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
+  //fullbody.position.y += roty;
+  //fullbody.position.x += rotx;
+  
+  if((obstacle3.length > 0 && (obstacle3[1].distance <= 50))||(obstacle4.length > 0 && (obstacle4[1].distance <= 50))){
   fullbody.rotation.z = rotz;
   //fullbody.position.x -= rotx;
   fullbody.position.y -= rotx;}
@@ -253,6 +254,9 @@ function loop(){
   raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
   raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
   raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+
+  fullbody.position.y += roty;
+  fullbody.position.x += rotx;	
 
   fullbody.myoneleg.rotation.z += step1;
   if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
