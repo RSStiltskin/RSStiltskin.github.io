@@ -273,14 +273,21 @@ LFoot.prototype = new THREE.Object3D;
   //fullbody.position.x += rotx;
   fullbody.position.y += roty;
 
-  if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))|| (obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
+  if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))){
+  fullbody.rotation.z = rotz;
+  fullbody.position.y -= roty;}
+  //fullbody.position.y += roty;}
+  if((obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.y += roty;}
-  //fullbody.position.y += roty;}
 
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))|| (obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
+  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   fullbody.position.x += rotx;}
+  
+  if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
+  fullbody.rotation.z = rotz;
+  fullbody.position.x -= rotx;}
   
   raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
 	raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
