@@ -254,11 +254,12 @@ function loop(){
   //fullbody.position.y += roty;
   
   fullbody.position.y += roty;
+  fullbody.position.x += rotx;
   //raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
 
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
+  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))||(obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
-  fullbody.position.x += rotx;
+  fullbody.position.x -= rotx;
   //raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
   //raycaster1.set( fullbody.position, new THREE.Vector3(0,-1,0) );
   //raycaster2.set( fullbody.position, new THREE.Vector3(0,1,0) );
@@ -276,9 +277,9 @@ function loop(){
   //raycaster4.set( fullbody.position, new THREE.Vector3(0,1,0) );
   }
   //fullbody.position.y += roty;}
-  if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
-  fullbody.rotation.z = rotz;
-  fullbody.position.x -= rotx;}
+  //if((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
+  //fullbody.rotation.z = rotz;
+  //fullbody.position.x -= rotx;}
   //raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
   //raycaster1.set( fullbody.position, new THREE.Vector3(0,1,0) );
   //raycaster2.set( fullbody.position, new THREE.Vector3(0,-1,0) );
