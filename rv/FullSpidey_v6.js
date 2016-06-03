@@ -245,11 +245,11 @@ function loop(){
   //fullbody.position.y -= rotx;
   }
   
-  if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))||(obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
-  fullbody.rotation.z = rotz;
-  fullbody.position.y -= rotx;
+  //if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))||(obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
+  //fullbody.rotation.z = rotz;
+  //fullbody.position.y -= rotx;
   //fullbody.position.y -= roty;
-  }
+  //}
  
   raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
   raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
