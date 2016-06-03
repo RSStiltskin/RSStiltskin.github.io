@@ -258,7 +258,7 @@ function loop(){
   //fullbody.position.x += rotx;
   
   //obstaculo1=obs.raycaster.intersectObjects(escena.children,true);
-  if((obstaculo1.length>0&&(obstaculo1[0].distance<=50))){
+  if((obstacle1.length>0&&(obstacle1[0].distance<=50))){
    if(coor==1){
     fullbody.rotation.z = rotz;
     //obs.rob.rotation.y+=Math.PI/2;
