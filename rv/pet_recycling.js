@@ -15,7 +15,7 @@ function setup(){
   camera.position.z=80;
  
   renderer = new THREE.WebGLRenderer();
-  renderer.setSize( window.innerHeight, window.innerHeight);
+  renderer.setSize( window.innerWidth, window.innerHeight);
   document.body.appendChild(renderer.domElement);
 }
 
