@@ -239,7 +239,14 @@ function loop(){
   //fullbody.position.y += roty;
   //fullbody.position.x += rotx;
   
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))||(obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
+  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
+  fullbody.rotation.z = rotz;
+  roty = -roty;
+  rotz = -rotz;
+  //fullbody.position.y -= rotx;
+  }
+  
+  if ((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
   roty = -roty;
   rotz = -rotz;
