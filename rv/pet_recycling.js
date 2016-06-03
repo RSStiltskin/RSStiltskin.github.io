@@ -11,7 +11,7 @@ function setup(){
   Proof = new A1;
   scene = new THREE.Scene();
   scene.add(Proof);
-  camera = new THREE.PerspectiveCamera();
+  camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.z=80;
  
   renderer = new THREE.WebGLRenderer();
