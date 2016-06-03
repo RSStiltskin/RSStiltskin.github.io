@@ -3,7 +3,8 @@ var step1, step2, step3, step4, fullbody;
 var rotx, roty, rotz;
 var obstacle1, obstacle2, obstacle3, obstacle4;
 var raycaster1, raycaster2, raycaster3, raycaster4;
-var Thewall1, Thewall2, Thewall3, Thewall4;
+var floyd, coord, step;
+//var Thewall1, Thewall2, Thewall3, Thewall4;
 
 function TopLLeg(){
   THREE.Object3D.call(this);
@@ -188,6 +189,20 @@ function FullSpider(){
 }
 FullSpider.prototype = new THREE.Object3D;
 
+function TheWall(){
+	THREE.Object3D.call(this);
+	this.thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+	this.thewall1.position.set(100,0,0);
+	this.thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+	this.thewall2.position.set(-100,0,0);
+	this.thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+	this.thewall3.position.set(0,100,0); 
+	this.thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+	this.thewall4.position.set(0,-100,0);
+	this.add(this.thewall1, this.thewall2, this.thewall3, this.thewall4);
+}
+TheWall.prototype = new THREE.Object3D;
+
 function setup(){
   var lights = [];
   var axisHelper = new THREE.AxisHelper( 50 );
@@ -197,30 +212,33 @@ function setup(){
   lights[1] = new THREE.PointLight(0xffffff, 1, 0);
   lights[0].position.set(0, 0, 100);
   lights[1].position.set(200, 200, -200);
-  Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
-  Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
-  Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
-  Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
-  Thewall1.position.set(100,0,0);
-  Thewall2.position.set(-100,0,0); 
-  Thewall3.position.set(0,100,0); 
-  Thewall4.position.set(0,-100,0); 
-  raycaster1 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(1,0,0));
-  raycaster2 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(-1,0,0));
-  raycaster3 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
-  raycaster4 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,-1,0));
+  floyd = new TheWall;
+  //Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+  //Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+  //Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+  //Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+  //Thewall1.position.set(100,0,0);
+  //Thewall2.position.set(-100,0,0); 
+  //Thewall3.position.set(0,100,0); 
+  //Thewall4.position.set(0,-100,0); 
+  raycaster1 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
+  //raycaster2 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(-1,0,0));
+  //raycaster3 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
+  //raycaster4 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,-1,0));
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
   step4 = 0.017;
   rotx = 1;
   roty = 1;
-  rotz = Math.PI;
+  rotz = Math.PI/2;
+  coor = 1;
+  step = 1;
   scene = new THREE.Scene();
   scene.add(fullbody, axisHelper);
   scene.add(lights[0]);
   scene.add(lights[1]);
-  scene.add(Thewall1, Thewall2, Thewall3, Thewall4);
+  scene.add(floyd);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(0,0,120);
   renderer = new THREE.WebGLRenderer();
@@ -231,54 +249,51 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
-  obstacle1 = raycaster1.intersectObject(Thewall1);
-  obstacle2 = raycaster2.intersectObject(Thewall2);
-  obstacle3 = raycaster3.intersectObject(Thewall3);
-  obstacle4 = raycaster4.intersectObject(Thewall4);
+  obstacle1 = raycaster1.intersectObject(floyd);
+  //obstacle2 = raycaster2.intersectObject(Thewall2);
+  //obstacle3 = raycaster3.intersectObject(Thewall3);
+  //obstacle4 = raycaster4.intersectObject(Thewall4);
   
   //fullbody.position.y += roty;
   //fullbody.position.x += rotx;
   
-  if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))){
-  fullbody.rotation.z = rotz;
-  roty = -roty;
-  //rotz = -rotz;
-  //fullbody.position.y -= rotx;
-  }
-  
-  if ((obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
-  fullbody.rotation.z = rotz;
-  roty = -roty;
-  //rotz = -rotz;
-  //fullbody.position.y -= rotx;
-  }
-  
-  //if((obstacle1.length > 0 && (obstacle1[0].distance <= 50))||(obstacle2.length > 0 && (obstacle2[0].distance <= 50))){
-  //fullbody.rotation.z = rotz;
-  //fullbody.position.y -= rotx;
-  //fullbody.position.y -= roty;
-  //}
- 
-  raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
-  raycaster2.set( fullbody.position, new THREE.Vector3(-1,0,0) );
-  raycaster3.set( fullbody.position, new THREE.Vector3(0,1,0) );
-  raycaster4.set( fullbody.position, new THREE.Vector3(0,-1,0) );
-
-  fullbody.position.y += roty;
-  //fullbody.position.x += rotx;	
-
-  fullbody.myoneleg.rotation.z += step1;
-  if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
-    step1 = -step1;
-  fullbody.mytwoleg.rotation.z += step2;
-  if(Math.abs(fullbody.mytwoleg.rotation.z)>Math.PI/4)
-    step2 = -step2;
-  fullbody.myfourleg.rotation.z += step3;
-  if(Math.abs(fullbody.myfourleg.rotation.z)>Math.PI/4)
-    step3 = -step3;
-  fullbody.mythreeleg.rotation.z += step4;
-  if(Math.abs(fullbody.mythreeleg.rotation.z)>Math.PI/4)
-    step4 = -step4;
+  //obstaculo1=obs.raycaster.intersectObjects(escena.children,true);
+  if((obstaculo1.length>0&&(obstaculo1[0].distance<=50))){
+   if(coor==1){
+    fullbody.rotation.z = rotz;
+    //obs.rob.rotation.y+=Math.PI/2;
+    raycaster1.set( fullbody.position, new THREE.Vector3(1,0,0) );
+    //obs.raycaster.set(obs.rob.position,new THREE.Vector3(0,0,-1));
+    coor=2;}
+  else if(coor==2){
+   fullbody.rotation.z = rotz;
+   raycaster1.set( fullbody.position, new THREE.Vector3(0,-1,0) );
+   //obs.rob.rotation.y+=Math.PI/2;
+   //obs.raycaster.set(obs.rob.position,new THREE.Vector3(-1,0,0));
+   coor=3;}
+  else if(coor==3){
+   //obs.rob.rotation.y+=Math.PI/2;
+   //obs.raycaster.set(obs.rob.position,new THREE.Vector3(0,0,1));
+   coor=4;}
+  else if(dir==4){
+   fullbody.rotation.z = rotz;
+   raycaster1.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+   //obs.rob.rotation.y+=Math.PI/2;
+   //obs.raycaster.set(obs.rob.position,new THREE.Vector3(1,0,0));
+   coor=1;}
+}
+if(coor==1){
+fullbody.position.y += step;
+}
+else if(coor==2){
+fullbody.position.x += -step; 
+}
+else if(dir==3){
+fullbody.position.y += step; 
+}
+else if(dir==4){
+fullbody.position.x += -step; 
+}
   renderer.render (scene, camera);
 }
 	
