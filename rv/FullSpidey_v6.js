@@ -241,7 +241,7 @@ function loop(){
   
   if((obstacle3.length > 0 && (obstacle3[0].distance <= 50))||(obstacle4.length > 0 && (obstacle4[0].distance <= 50))){
   fullbody.rotation.z = rotz;
-  fullbody.position.y -= rotx;
+  roty = -roty;
   //fullbody.position.y -= rotx;
   }
   
