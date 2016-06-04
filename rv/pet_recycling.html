@@ -4,11 +4,42 @@
     <title>Polyethylene terephthalate</title>
     <meta http-equiv="Content-Type" content="text/html;charset=UTF-8">
     <style>
-      body{ text-align: center;}
+      body { margin: 0; }
+      canvas { width: 100%; height: 100%; }
     </style>
   </head>
-  <body bgcolor = #E6E6E6>
-    <script src="http://mrdoob.github.com/three.js/build/three.min.js"></script>
-    <script src="./pet_recycling.js"></script>
+  <body>
+    <script src="three.min.js"> </script>
+    <script>
+    var scene, camera, renderer;
+    var Proof;
+    function A1(){
+     THREE.Object3D.call(this);
+     this.a1 = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
+      this.add(this.a1);
+      }
+    A1.prototype = new THREE.Object3D;
+    
+    function setup(){
+      Proof = new A1;
+      scene = new THREE.Scene();
+      scene.add(Proof);
+      camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
+      camera.position.z=80;
+      
+      renderer = new THREE.WebGLRenderer();
+      renderer.setSize( window.innerWidth, window.innerHeight);
+      document.body.appendChild(renderer.domElement);
+      }
+      
+      function loop(){
+        requestAnimationFrame( loop );
+        renderer.render (scene, camera);
+        Proof.rotation.x += 0.05;
+        }
+        
+      setup();
+      loop();
+    </script>
   </body>
 </html>
