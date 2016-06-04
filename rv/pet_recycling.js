@@ -28,16 +28,16 @@ function setup(){
   //con2.position.z =-10;
   con2.rotation.x = -Math.PI/2;
   con2.rotation.y = -Math.PI/4;
-  con2.position.set(-5,10*Math.sin(Math.PI/4),0);
+  con2.position.set(-3,10*Math.sin(Math.PI/4),0);
   con3 = new conveyor;
   con3.rotation.x = -Math.PI/2;
-  con3.position.set(-5+20*Math.cos(Math.PI/4),20*Math.sin(Math.PI/4),0); 
+  con3.position.set(-3+20*Math.cos(Math.PI/4),20*Math.sin(Math.PI/4),0); 
   scene = new THREE.Scene();
   scene.add(con1);
   scene.add(con2, con3);
   //con2, con3);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
-  camera.position.set(0,20,80);
+  camera.position.set(-10,20,80);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight);
