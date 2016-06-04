@@ -31,10 +31,10 @@ function setup(){
   con2.position.set(-2,10*Math.sin(Math.PI/4),0);
   con3 = new conveyor;
   con3.rotation.x = -Math.PI/2;
-  con3.position.x = 20*Math.sin(Math.PI/4); 
+  con3.position.set(20*Math.cos(Math.PI/4),20*Math.sin(Math.PI/4),0); 
   scene = new THREE.Scene();
   scene.add(con1);
-  scene.add(con2);
+  scene.add(con2, con3);
   //con2, con3);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(0,20,80);
