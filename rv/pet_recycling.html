@@ -15,12 +15,12 @@
     var Proof;
     var con1, con2, con3;
     
-    function A1(){
-     THREE.Object3D.call(this);
-     this.a1 = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
-      this.add(this.a1);
-      }
-    A1.prototype = new THREE.Object3D;
+    //function A1(){
+     //THREE.Object3D.call(this);
+     //this.a1 = new THREE.Mesh( new THREE.SphereGeometry(20,20,20), new THREE.MeshBasicMaterial({color:0xFFFF00, wireframe: true}) );
+     //this.add(this.a1);
+    //  }
+    //A1.prototype = new THREE.Object3D;
     
     function conveyor(){
       THREE.Objet3D.call(this);
@@ -34,7 +34,7 @@
     conveyor.prototype = new THREE.Object3D;
     
     function setup(){
-      var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
+      //var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
       //Proof = new A1;
       con1 = new conveyor;
       con1.position.x = -20;
