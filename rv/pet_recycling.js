@@ -27,7 +27,8 @@ function setup(){
   con2.position.x =-10;
   //con2.position.z =-10;
   con2.rotation.x = -Math.PI/2;
-  con2.rotation.y = Math.PI/4;
+  con2.rotation.y = -Math.PI/4;
+  con2.position.set(-2,10*Math.sin(Math.PI/4),0);
   con3 = new conveyor;
   con3.rotation.x = -Math.PI/2;
   con3.position.x = 20*Math.sin(Math.PI/4); 
