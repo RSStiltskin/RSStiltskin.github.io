@@ -32,7 +32,8 @@ function setup(){
   con3.rotation.x = -Math.PI/2;
   con3.position.z = 20*Math.sin(Math.PI/4); 
   scene = new THREE.Scene();
-  scene.add(con1, con2, con3);
+  scene.add(con1);
+  //con2, con3);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(0,20,80);
   
