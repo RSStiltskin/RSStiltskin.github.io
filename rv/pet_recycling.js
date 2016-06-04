@@ -40,7 +40,7 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   renderer.render (scene, camera);
-  Proof.rotation.x += 0.05;
+  //Proof.rotation.x += 0.05;
 }
 
 setup();
