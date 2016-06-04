@@ -8,7 +8,7 @@ function A1(){
 A1.prototype = new THREE.Object3D;
 
 function conveyor(){
-  THREE.Objet3D.call(this);
+  THREE.Object3D.call(this);
   this.C1 = new THREE.Mesh( new THREE.BoxGeometry(20,1,7), new THREE.MeshNormalMaterial());
   this.C2 = new THREE.Mesh( new THREE.BoxGeometry(20,1,7), new THREE.MeshNormalMaterial());
   this.C3 = new THREE.Mesh( new THREE.BoxGeometry(20,20,5), new THREE.MeshNormalMaterial());
