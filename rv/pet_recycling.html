@@ -29,6 +29,7 @@
       this.C3 = new THREE.Mesh( new THREE.BoxGeometry(20,20,5), new THREE.MeshNormalMaterial());
       this.C1.position.y = -10;
       this.C2.position.y = 10;
+      this.add(this.C1, this.C2, this.C3);
     }
     conveyor.prototype = new THREE.Object3D;
     
