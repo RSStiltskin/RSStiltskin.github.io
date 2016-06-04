@@ -21,9 +21,10 @@
     A1.prototype = new THREE.Object3D;
     
     function setup(){
+      var light = new THREE.HemisphereLight( 0xffffbb, 0x080820, 1 );
       Proof = new A1;
       scene = new THREE.Scene();
-      scene.add(Proof);
+      scene.add(Proof, light);
       camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
       camera.position.z=80;
       
