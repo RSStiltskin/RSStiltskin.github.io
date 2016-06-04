@@ -22,10 +22,13 @@ conveyor.prototype = new THREE.Object3D;
 function setup(){
   con1 = new conveyor;
   con1.position.x = -20;
+  con1.rotation.x = -Math.PI/2;
   con2 = new conveyor;
   con2.position.x =-10;
+  con2.position.x = -Math.PI/2;
   con2.rotation.y = Math.PI/4;
   con3 = new conveyor;
+  con3.rotation.x = -Math.PI/2;
   con3.position.z = 20*Math.sin(Math.PI/4); 
   scene = new THREE.Scene();
   scene.add(con1, con2, con3);
