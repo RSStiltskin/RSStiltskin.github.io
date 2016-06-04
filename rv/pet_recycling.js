@@ -33,7 +33,7 @@ function setup(){
   scene = new THREE.Scene();
   scene.add(con1, con2, con3);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
-  camera.position.set(0,0,80);
+  camera.position.set(0,20,80);
   
   renderer = new THREE.WebGLRenderer();
   renderer.setSize( window.innerWidth, window.innerHeight);
