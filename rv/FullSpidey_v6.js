@@ -250,11 +250,16 @@ function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
   obstacle1 = raycaster1.intersectObject(floyd);
-  fullbody.position.y += step;
+  
+  //fullbody.position.y += step;
   if((obstacle1.length>0&&(obstacle1[0].distance<=50))){
-  	fullbody.rotation.z = Math.PI;
-  	fullbody.position.y += -step;}
+  	fullbody.rotation.z += Math.PI;
+  	step = -step;}
+  else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))){
+  	fullbody.rotation.z += Math.PI;
+  	step = -step;  }
   fullbody.position.y += step;
+ 
   renderer.render (scene, camera);
 }
 setup();
