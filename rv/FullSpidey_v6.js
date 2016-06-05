@@ -254,7 +254,7 @@ function loop(){
   if((obstacle1.length>0&&(obstacle1[0].distance<=50))){
   	fullbody.rotation.z = Math.PI;
   	fullbody.position.y += -step;}
-  
+  renderer.render (scene, camera);
 }
 setup();
 loop();
