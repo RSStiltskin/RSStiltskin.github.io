@@ -272,12 +272,13 @@ function loop(){
    //obs.raycaster.set(obs.rob.position,new THREE.Vector3(-1,0,0));
    coor=3;}
   else if(coor==3){
-   //obs.rob.rotation.y+=Math.PI/2;
+   fullbody.rotation.z = rotz;
+   raycaster1.set( fullbody.position, new THREE.Vector3(-1,0,0) );
    //obs.raycaster.set(obs.rob.position,new THREE.Vector3(0,0,1));
    coor=4;}
   else if(dir==4){
    fullbody.rotation.z = rotz;
-   raycaster1.set( fullbody.position, new THREE.Vector3(-1,0,0) );
+   raycaster1.set( fullbody.position, new THREE.Vector3(0,1,0) );
    //obs.rob.rotation.y+=Math.PI/2;
    //obs.raycaster.set(obs.rob.position,new THREE.Vector3(1,0,0));
    coor=1;}
@@ -286,13 +287,13 @@ if(coor==1){
 fullbody.position.y += step;
 }
 else if(coor==2){
-fullbody.position.x += -step; 
+fullbody.position.x += step; 
 }
-else if(dir==3){
-fullbody.position.y += step; 
+else if(coor==3){
+fullbody.position.y -= step; 
 }
-else if(dir==4){
-fullbody.position.x += -step; 
+else if(coor==4){
+fullbody.position.x -= step; 
 }
   renderer.render (scene, camera);
 }
