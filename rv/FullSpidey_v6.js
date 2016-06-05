@@ -255,7 +255,7 @@ function loop(){
   	fullbody.rotation.z = Math.PI;
   	fullbody.position.y += -step;}
   
-	
+}
 setup();
 loop();
 
