@@ -271,10 +271,10 @@ function loop(){
   	coor=1;}
  
   
-  if(coor==1){fullbody.position.y += step;}
-  if(coor==4){fullbody.position.y -= step;}
-  if(coor==2){fullbody.position.x += step;}
-  if(coor==3){fullbody.position.x -= step;}
+  if(coor==1){fullbody.position.x = 0; fullbody.position.y += step;}
+  if(coor==4){fullbody.position.x = 0; fullbody.position.y -= step;}
+  if(coor==2){fullbody.position.y = 0; fullbody.position.x += step;}
+  if(coor==3){fullbody.position.y = 0; fullbody.position.x -= step;}
   	
   raycaster1.set(fullbody.position, new THREE.Vector3(0,1,0));
   raycaster2.set(fullbody.position, new THREE.Vector3(-1,0,0));
