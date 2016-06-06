@@ -4,7 +4,7 @@ var rotx, roty, rotz;
 var obstacle1, obstacle2, obstacle3, obstacle4;
 var raycaster1, raycaster2, raycaster3, raycaster4;
 var floyd, coord, step;
-//var Thewall1, Thewall2, Thewall3, Thewall4;
+var Thewall1, Thewall2, Thewall3, Thewall4;
 
 function TopLLeg(){
   THREE.Object3D.call(this);
@@ -189,19 +189,19 @@ function FullSpider(){
 }
 FullSpider.prototype = new THREE.Object3D;
 
-function TheWall(){
-	THREE.Object3D.call(this);
-	this.thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
-	this.thewall1.position.set(100,0,0);
-	this.thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
-	this.thewall2.position.set(-100,0,0);
-	this.thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
-	this.thewall3.position.set(0,100,0); 
-	this.thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
-	this.thewall4.position.set(0,-100,0);
-	this.add(this.thewall1, this.thewall2, this.thewall3, this.thewall4);
-}
-TheWall.prototype = new THREE.Object3D;
+//function TheWall(){
+//	THREE.Object3D.call(this);
+//	this.thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+//	this.thewall1.position.set(100,0,0);
+//	this.thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+//	this.thewall2.position.set(-100,0,0);
+//	this.thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+//	this.thewall3.position.set(0,100,0); 
+//	this.thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+//	this.thewall4.position.set(0,-100,0);
+//	this.add(this.thewall1, this.thewall2, this.thewall3, this.thewall4);
+//}
+//TheWall.prototype = new THREE.Object3D;
 
 function setup(){
   var lights = [];
@@ -213,15 +213,15 @@ function setup(){
   lights[0].position.set(0, 0, 100);
   lights[1].position.set(200, 200, -200);
   floyd = new TheWall;
-  //Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
-  //Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
-  //Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
-  //Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
-  //Thewall1.position.set(100,0,0);
-  //Thewall2.position.set(-100,0,0); 
-  //Thewall3.position.set(0,100,0); 
-  //Thewall4.position.set(0,-100,0); 
-  raycaster1 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
+  Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+  Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
+  Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+  Thewall4 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
+  Thewall1.position.set(100,0,0);
+  Thewall2.position.set(-100,0,0); 
+  Thewall3.position.set(0,100,0); 
+  Thewall4.position.set(0,-100,0); 
+  raycaster1 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(1,0,0));
   raycaster2 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(-1,0,0));
   raycaster3 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
   raycaster4 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,-1,0));
@@ -249,14 +249,14 @@ function setup(){
 function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
-  obstacle1 = raycaster1.intersectObject(floyd);
-  obstacle2 = raycaster2.intersectObject(floyd);
-  obstacle3 = raycaster3.intersectObject(floyd);
-  obstacle4 = raycaster4.intersectObject(floyd);
+  obstacle1 = raycaster1.intersectObject(Thewall1);
+  obstacle2 = raycaster2.intersectObject(Thewall2);
+  obstacle3 = raycaster3.intersectObject(Thewall3);
+  obstacle4 = raycaster4.intersectObject(Thewall4);
   
   
   //fullbody.position.y += step;
-  if((obstacle1.length>0&&(obstacle1[0].distance<=50))){
+  if((obstacle3.length>0&&(obstacle1[0].distance<=50))){
   	fullbody.rotation.z += Math.PI;
   	fullbody.position.y += -step;}
   //else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))){
@@ -272,5 +272,3 @@ function loop(){
 }
 setup();
 loop();
-
-
