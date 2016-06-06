@@ -212,7 +212,7 @@ function setup(){
   lights[1] = new THREE.PointLight(0xffffff, 1, 0);
   lights[0].position.set(0, 0, 100);
   lights[1].position.set(200, 200, -200);
-  floyd = new TheWall;
+  //floyd = new TheWall;
   Thewall1 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
   Thewall2 = new THREE.Mesh(new THREE.BoxGeometry(10,210,20), new THREE.MeshNormalMaterial());
   Thewall3 = new THREE.Mesh(new THREE.BoxGeometry(210,10,20), new THREE.MeshNormalMaterial());
