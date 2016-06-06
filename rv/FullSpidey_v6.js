@@ -258,7 +258,7 @@ function loop(){
   //fullbody.position.y += step;
   if((obstacle1.length>0&&(obstacle1[0].distance<=50))){
   	fullbody.rotation.z += Math.PI;
-  	step = -step;}
+  	fullbody.position.y += -step;}
   //else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))){
   	//fullbody.rotation.z += Math.PI;
   	//step = -step;  }
