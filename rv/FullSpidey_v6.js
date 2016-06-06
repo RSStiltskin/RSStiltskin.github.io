@@ -266,7 +266,7 @@ function loop(){
   if(coor==1){
   	fullbody.position.y += step;}
   if(coor==3){
-  	fullbody.position.y -step;}
+  	fullbody.position.y -= step;}
   	
   raycaster1.set(fullbody.position, new THREE.Vector3(0,1,0));
   raycaster2.set(fullbody.position, new THREE.Vector3(-1,0,0));
