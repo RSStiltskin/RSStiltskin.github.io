@@ -238,7 +238,7 @@ function setup(){
   scene.add(fullbody, axisHelper);
   scene.add(lights[0]);
   scene.add(lights[1]);
-  scene.add(floyd);
+  scene.add(Thewall1,Thewall2,Thewall3,Thewall4);
   camera = new THREE.PerspectiveCamera(100, window.innerWidth/window.innerHeight,1,1000);
   camera.position.set(0,0,120);
   renderer = new THREE.WebGLRenderer();
