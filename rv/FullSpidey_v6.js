@@ -222,9 +222,9 @@ function setup(){
   //Thewall3.position.set(0,100,0); 
   //Thewall4.position.set(0,-100,0); 
   raycaster1 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
-  //raycaster2 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(-1,0,0));
-  //raycaster3 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
-  //raycaster4 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,-1,0));
+  raycaster2 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(-1,0,0));
+  raycaster3 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,1,0));
+  raycaster4 = new THREE.Raycaster(fullbody.position, new THREE.Vector3(0,-1,0));
   step1 = 0.01;
   step2 = 0.02;
   step3 = 0.013;
@@ -250,16 +250,24 @@ function loop(){
   requestAnimationFrame( loop );
   camera.lookAt(scene.position);
   obstacle1 = raycaster1.intersectObject(floyd);
+  obstacle2 = raycaster2.intersectObject(floyd);
+  obstacle3 = raycaster3.intersectObject(floyd);
+  obstacle4 = raycaster4.intersectObject(floyd);
+  
   
   //fullbody.position.y += step;
   if((obstacle1.length>0&&(obstacle1[0].distance<=50))){
   	fullbody.rotation.z += Math.PI;
   	step = -step;}
-  else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))){
-  	fullbody.rotation.z += Math.PI;
-  	step = -step;  }
+  //else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))){
+  	//fullbody.rotation.z += Math.PI;
+  	//step = -step;  }
   fullbody.position.y += step;
  
+  raycaster1.set(fullbody.position, new THREE.Vector3(0,1,0));
+  raycaster2.set(fullbody.position, new THREE.Vector3(-1,0,0));
+  raycaster3.set(fullbody.position, new THREE.Vector3(0,1,0));
+  raycaster4.set(fullbody.position, new THREE.Vector3(0,-1,0));
   renderer.render (scene, camera);
 }
 setup();
