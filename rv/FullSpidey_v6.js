@@ -258,12 +258,16 @@ function loop(){
   //fullbody.position.y += step;
   if((obstacle3.length>0&&(obstacle3[0].distance<=50))){
   	fullbody.rotation.z += Math.PI;
-  	fullbody.position.y += -step;}
-  else if ((obstacle4.length>0&&(obstacle4[0].distance<=50))){
+  	coor=3;}
+  if ((obstacle4.length>0&&(obstacle4[0].distance<=50))){
   	fullbody.rotation.z += Math.PI;
-  	fullbody.position.y += step;  }
-  else fullbody.position.y += step;
- 
+  	coor=1;}
+  
+  if(coor==1){
+  	fullbody.position.y += step;}
+  if(coor==3){
+  	fullbody.position.y -step;}}
+  	
   raycaster1.set(fullbody.position, new THREE.Vector3(0,1,0));
   raycaster2.set(fullbody.position, new THREE.Vector3(-1,0,0));
   raycaster3.set(fullbody.position, new THREE.Vector3(0,1,0));
