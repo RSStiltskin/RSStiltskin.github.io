@@ -260,9 +260,9 @@ function loop(){
   //else if ((obstacle4.length>0 && (obstacle4[0].distance<=50))){
   //	fullbody.rotation.z += Math.PI/2;
   //	coor=3;}
-  else if ((obstacle1.length>0 && (obstacle1[0].distance<=50))){
-	fullbody.rotation.z += Math.PI/2;
-	coor=4;}
+  //else if ((obstacle1.length>0 && (obstacle1[0].distance<=50))){
+  //	fullbody.rotation.z += Math.PI/2;
+  //	coor=4;}
   //else if ((obstacle2.length>0 && (obstacle2[0].distance<=50))){
   //	fullbody.rotation.z += Math.PI/2;
   //	coor=1;}
