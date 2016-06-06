@@ -256,18 +256,18 @@ function loop(){
   
   
   //fullbody.position.y += step;
-  if((obstacle3.length>0&&(obstacle3[0].distance<=50))){
+  if((obstacle3.length>0&&(obstacle3[0].distance<=50))||(obstacle1.length>0&&(obstacle1[0].distance<=50))){
   	fullbody.rotation.z += Math.PI/2;
   	coor=2;}
   
-  else if ((obstacle4.length>0&&(obstacle4[0].distance<=50))){
+  else if ((obstacle4.length>0&&(obstacle4[0].distance<=50))||(obstacle2.length>0&&(obstacle2[0].distance<=50))){
   	fullbody.rotation.z += Math.PI/2;
   	coor=3;}
   	
-  else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))){
+  else if ((obstacle1.length>0&&(obstacle1[0].distance<=50))||(obstacle4.length>0&&(obstacle4[0].distance<=50))){
 	fullbody.rotation.z += Math.PI/2;
 	coor=4;}
-  else if ((obstacle2.length>0&&(obstacle2[0].distance<=50))){
+  else if ((obstacle2.length>0&&(obstacle2[0].distance<=50))||(obstacle3.length>0&&(obstacle3[0].distance<=50))){
   	fullbody.rotation.z += Math.PI/2;
   	coor=1;}
  
