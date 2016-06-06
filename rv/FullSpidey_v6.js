@@ -280,6 +280,20 @@ function loop(){
   raycaster2.set(fullbody.position, new THREE.Vector3(-1,0,0));
   raycaster3.set(fullbody.position, new THREE.Vector3(0,1,0));
   raycaster4.set(fullbody.position, new THREE.Vector3(0,-1,0));
+  
+  fullbody.myoneleg.rotation.z += step1;
+  if(Math.abs(fullbody.myoneleg.rotation.z)>Math.PI/4)
+    step1 = -step1;
+  fullbody.mytwoleg.rotation.z += step2;
+  if(Math.abs(fullbody.mytwoleg.rotation.z)>Math.PI/4)
+    step2 = -step2;
+  fullbody.myfourleg.rotation.z += step3;
+  if(Math.abs(fullbody.myfourleg.rotation.z)>Math.PI/4)
+    step3 = -step3;
+  fullbody.mythreeleg.rotation.z += step4;
+  if(Math.abs(fullbody.mythreeleg.rotation.z)>Math.PI/4)
+    step4 = -step4;
+
   renderer.render (scene, camera);
 }
 setup();
